@@ -23,26 +23,16 @@
       --shadow: 0 8px 40px rgba(0,0,0,0.85);
       --glow: 0 0 24px rgba(124,111,255,0.2);
     }
-
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: 'Nunito', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      overflow-x: hidden;
-    }
-
-    /* scrollbar */
+    body { font-family: 'Nunito', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
     ::-webkit-scrollbar { width: 6px; }
     ::-webkit-scrollbar-track { background: var(--bg); }
     ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 99px; }
 
-    /* ── NAVBAR ── */
+    /* NAVBAR */
     nav {
       position: sticky; top: 0; z-index: 100;
-      background: rgba(5,5,8,0.92);
-      backdrop-filter: blur(16px);
+      background: rgba(5,5,8,0.92); backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border);
       padding: 0 1.2rem;
       display: flex; align-items: center; justify-content: space-between;
@@ -58,7 +48,7 @@
     .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
     .hamburger span { width: 24px; height: 3px; background: var(--primary); border-radius: 4px; }
 
-    /* ── HERO ── */
+    /* HERO */
     .hero {
       min-height: 92vh;
       background: radial-gradient(ellipse at 50% 0%, #18104a 0%, #050508 70%);
@@ -82,18 +72,11 @@
       font-family: 'Pacifico', cursive;
       font-size: clamp(2.5rem, 9vw, 5rem);
       background: linear-gradient(135deg, #a78bfa, #7C6FFF, #00E5C0);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      background-clip: text;
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
       line-height: 1.15; margin-bottom: .6rem;
     }
-    .hero-school {
-      font-size: clamp(.9rem, 2.5vw, 1.1rem); color: var(--muted);
-      font-weight: 700; margin-bottom: .5rem; letter-spacing: .03em;
-    }
-    .hero p {
-      color: rgba(232,232,255,0.7); font-size: clamp(.95rem, 2.5vw, 1.15rem);
-      font-weight: 600; margin-bottom: 2rem; max-width: 480px;
-    }
+    .hero-school { font-size: clamp(.9rem, 2.5vw, 1.1rem); color: var(--muted); font-weight: 700; margin-bottom: .5rem; letter-spacing: .03em; }
+    .hero p { color: rgba(232,232,255,0.7); font-size: clamp(.95rem, 2.5vw, 1.15rem); font-weight: 600; margin-bottom: 2rem; max-width: 480px; }
     .hero-btns { display: flex; gap: .8rem; flex-wrap: wrap; justify-content: center; }
     .btn {
       display: inline-flex; align-items: center; gap: .4rem;
@@ -119,29 +102,23 @@
     }
     .social-bar a:hover { background: rgba(124,111,255,0.25); color: var(--primary); transform: scale(1.1); border-color: var(--primary); }
 
-    /* ── STARS BG ── */
+    /* STARS */
     .star-field { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
-    .star-dot {
-      position: absolute; background: #fff; border-radius: 50%;
-      animation: twinkle 2s infinite alternate;
-    }
+    .star-dot { position: absolute; background: #fff; border-radius: 50%; animation: twinkle 2s infinite alternate; }
     @keyframes twinkle { 0%{opacity:.05} 100%{opacity:.6} }
 
-    /* ── SECTION COMMONS ── */
+    /* SECTIONS */
     section { padding: 4rem 1.2rem; max-width: 1100px; margin: 0 auto; }
     .section-divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent); margin: 0 1.2rem; }
-    .section-tag {
-      display: inline-block; padding: .3rem .9rem; border-radius: 99px;
-      font-size: .72rem; font-weight: 800; letter-spacing: .07em; margin-bottom: .6rem;
-    }
+    .section-tag { display: inline-block; padding: .3rem .9rem; border-radius: 99px; font-size: .72rem; font-weight: 800; letter-spacing: .07em; margin-bottom: .6rem; }
     .tag-purple { background: rgba(124,111,255,0.15); color: var(--primary); border: 1px solid rgba(124,111,255,0.3); }
     .tag-pink   { background: rgba(255,107,157,0.12); color: var(--secondary); border: 1px solid rgba(255,107,157,0.3); }
-    .tag-green  { background: rgba(0,229,192,0.1);   color: var(--accent); border: 1px solid rgba(0,229,192,0.3); }
+    .tag-green  { background: rgba(0,229,192,0.1); color: var(--accent); border: 1px solid rgba(0,229,192,0.3); }
     .tag-yellow { background: rgba(255,209,102,0.12); color: var(--yellow); border: 1px solid rgba(255,209,102,0.3); }
     h2.section-title { font-size: clamp(1.5rem, 4vw, 2rem); font-weight: 900; margin-bottom: .4rem; color: var(--text); }
     .section-sub { color: var(--muted); font-size: .9rem; margin-bottom: 2rem; }
 
-    /* ── GALERI ── */
+    /* GALERI */
     .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1rem; }
     .gallery-item {
       border-radius: var(--radius); overflow: hidden; aspect-ratio: 1;
@@ -151,12 +128,7 @@
       border: 1px solid rgba(255,255,255,0.05);
     }
     .gallery-item:hover { transform: scale(1.04); box-shadow: var(--glow); }
-    .gallery-label {
-      position: absolute; bottom: 0; left: 0; right: 0;
-      background: linear-gradient(transparent, rgba(0,0,0,0.75));
-      color: #fff; font-size: .78rem; font-weight: 700;
-      padding: 1.5rem .6rem .5rem; text-align: center;
-    }
+    .gallery-label { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.75)); color: #fff; font-size: .78rem; font-weight: 700; padding: 1.5rem .6rem .5rem; text-align: center; }
     .gallery-item:nth-child(1){background:linear-gradient(135deg,#0d0d28,#1a0d42)}
     .gallery-item:nth-child(2){background:linear-gradient(135deg,#110820,#2e0820)}
     .gallery-item:nth-child(3){background:linear-gradient(135deg,#081420,#052535)}
@@ -170,31 +142,194 @@
     }
     .gallery-upload-btn:hover { background: rgba(124,111,255,0.12); border-color: var(--primary); }
 
-    /* ── ORGANISASI ── */
-    .org-chart { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
-    .org-row { display: flex; flex-wrap: wrap; gap: .9rem; justify-content: center; }
-    .org-card {
-      background: var(--card); border-radius: var(--radius); padding: 1rem 1.2rem;
-      box-shadow: var(--shadow); text-align: center; min-width: 135px; max-width: 160px;
-      border: 1px solid var(--border); transition: transform .2s, box-shadow .2s;
-      border-top: 3px solid var(--primary);
+    /* ORG CHART - new tree style */
+    .org-tree {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+      overflow-x: auto;
+      padding-bottom: 1rem;
     }
-    .org-card:hover { transform: translateY(-4px); box-shadow: var(--glow); }
-    .org-card.wali   { border-top-color: #a78bfa; }
-    .org-card.ketua  { border-top-color: var(--yellow); }
-    .org-card.wakil  { border-top-color: var(--secondary); }
-    .org-card.sekre  { border-top-color: var(--accent); }
-    .org-card.bend   { border-top-color: #FF9F43; }
-    .org-avatar {
-      width: 52px; height: 52px; border-radius: 50%; margin: 0 auto .6rem;
-      display: flex; align-items: center; justify-content: center; font-size: 1.5rem;
-      background: var(--bg3); border: 1px solid var(--border);
-    }
-    .org-role { font-size: .68rem; font-weight: 800; letter-spacing: .05em; color: var(--muted); text-transform: uppercase; }
-    .org-name { font-size: .85rem; font-weight: 800; margin-top: .25rem; color: var(--text); line-height: 1.3; }
-    .org-line { width: 2px; height: 24px; background: linear-gradient(var(--primary), var(--secondary)); border-radius: 4px; }
 
-    /* ── DAFTAR SISWA ── */
+    /* Scroll reveal for org */
+    .org-reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .org-reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .org-level { display: flex; justify-content: center; position: relative; }
+    .org-node-wrap { display: flex; flex-direction: column; align-items: center; }
+
+    .org-connector-down {
+      width: 2px; height: 32px;
+      background: linear-gradient(var(--primary), var(--secondary));
+      margin: 0 auto;
+    }
+    .org-connector-h {
+      display: flex; align-items: flex-start; justify-content: center;
+      position: relative;
+    }
+    .org-connector-h::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%; right: 50%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      transition: left 0.4s, right 0.4s;
+    }
+    .org-branch {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+    }
+    .org-branch-item {
+      display: flex; flex-direction: column; align-items: center;
+      position: relative;
+    }
+    .org-branch-item::before {
+      content: '';
+      width: 2px; height: 32px;
+      background: linear-gradient(var(--primary), var(--secondary));
+      display: block;
+    }
+
+    .org-pill {
+      background: var(--card);
+      border: 1.5px solid var(--border);
+      border-radius: 999px;
+      padding: .55rem 1.4rem;
+      font-weight: 800; font-size: .88rem;
+      color: var(--text);
+      cursor: pointer;
+      transition: all .22s;
+      white-space: nowrap;
+      box-shadow: 0 2px 18px rgba(0,0,0,0.5);
+      position: relative;
+      text-align: center;
+    }
+    .org-pill:hover {
+      border-color: var(--primary);
+      background: rgba(124,111,255,0.15);
+      color: #fff;
+      box-shadow: 0 0 20px rgba(124,111,255,0.35);
+      transform: scale(1.04);
+    }
+    .org-pill.wali-kelas { border-color: #a78bfa; color: #c4b5fd; }
+    .org-pill.ketua-kelas { border-color: var(--yellow); color: var(--yellow); }
+    .org-pill.wakil-ketua { border-color: var(--secondary); color: var(--secondary); }
+    .org-pill.sekretaris { border-color: var(--accent); color: var(--accent); }
+    .org-pill.bendahara { border-color: #FF9F43; color: #FF9F43; }
+    .org-pill.keamanan { border-color: #60a5fa; color: #60a5fa; }
+    .org-pill.kebersihan { border-color: #4ade80; color: #4ade80; }
+
+    .org-role-label {
+      font-size: .68rem; font-weight: 800; letter-spacing: .07em;
+      color: var(--muted); text-transform: uppercase;
+      margin-bottom: .35rem; text-align: center;
+    }
+
+    .org-h-connector {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      width: 100%;
+      position: relative;
+    }
+
+    /* The horizontal line spanning across multiple branches */
+    .org-hline-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+    .org-hline {
+      height: 2px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      width: 60%;
+      margin: 0 auto;
+    }
+    .org-hline-dots {
+      display: flex;
+      justify-content: space-around;
+      width: 60%;
+      margin: 0 auto;
+    }
+    .org-hline-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--primary);
+      transform: translateY(-5px);
+    }
+
+    /* New: connected tree structure */
+    .org-tree-section {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .tree-row {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .tree-multi-row {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .tree-branch {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .v-line { width: 2px; height: 30px; background: linear-gradient(to bottom, #7C6FFF, #FF6B9D); }
+    .v-line-short { width: 2px; height: 18px; background: linear-gradient(to bottom, #7C6FFF, #FF6B9D); }
+
+    .h-line-container {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      width: 100%;
+    }
+
+    /* Spanning horizontal line with drops */
+    .span-connector {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+    .span-h { height: 2px; background: linear-gradient(90deg, #7C6FFF, #FF6B9D); border-radius: 2px; }
+    .span-drops {
+      display: flex;
+      justify-content: space-around;
+    }
+    .span-drop {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .span-drop-line { width: 2px; background: linear-gradient(to bottom, #7C6FFF80, #FF6B9D80); }
+    .dot-circle {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--primary); border: 2px solid var(--bg);
+      margin-bottom: -4px;
+    }
+
+    /* DAFTAR SISWA */
     .search-bar { display: flex; gap: .6rem; margin-bottom: 1.2rem; }
     .search-bar input {
       flex: 1; padding: .7rem 1rem; border-radius: 99px;
@@ -210,18 +345,65 @@
       border: 1px solid var(--border);
       display: flex; align-items: center; gap: .8rem;
       transition: transform .2s, box-shadow .2s, border-color .2s;
+      cursor: pointer;
     }
     .student-card:hover { transform: translateY(-2px); box-shadow: var(--glow); border-color: rgba(124,111,255,0.35); }
-    .student-avatar {
-      width: 42px; height: 42px; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.2rem; flex-shrink: 0; border: 1px solid var(--border);
-    }
+    .student-avatar { width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0; border: 1px solid var(--border); }
     .student-info { overflow: hidden; }
     .student-name { font-weight: 800; font-size: .85rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: var(--text); }
     .student-no { font-size: .72rem; color: var(--muted); font-weight: 600; }
 
-    /* ── KAPSUL WAKTU ── */
+    /* PROFILE MODAL */
+    .modal-overlay {
+      position: fixed; inset: 0; z-index: 200;
+      background: rgba(0,0,0,0.75); backdrop-filter: blur(10px);
+      display: flex; align-items: center; justify-content: center;
+      padding: 1rem;
+      opacity: 0; pointer-events: none;
+      transition: opacity .3s;
+    }
+    .modal-overlay.open { opacity: 1; pointer-events: all; }
+    .modal-card {
+      background: var(--card2);
+      border: 1px solid rgba(124,111,255,0.35);
+      border-radius: 28px;
+      padding: 2rem 1.8rem;
+      max-width: 380px; width: 100%;
+      position: relative;
+      box-shadow: 0 20px 80px rgba(0,0,0,0.9);
+      transform: scale(0.92) translateY(20px);
+      transition: transform .3s;
+    }
+    .modal-overlay.open .modal-card { transform: scale(1) translateY(0); }
+    .modal-close {
+      position: absolute; top: 1rem; right: 1rem;
+      width: 34px; height: 34px; border-radius: 50%;
+      background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.15);
+      color: var(--muted); font-size: 1.1rem;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; transition: all .2s;
+    }
+    .modal-close:hover { background: rgba(255,100,100,0.15); color: #ff6b6b; }
+    .modal-avatar {
+      width: 80px; height: 80px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2.5rem; margin: 0 auto 1rem;
+      border: 2px solid rgba(124,111,255,0.4);
+    }
+    .modal-name { font-size: 1.25rem; font-weight: 900; text-align: center; color: #fff; margin-bottom: .3rem; }
+    .modal-no { font-size: .75rem; color: var(--muted); text-align: center; font-weight: 700; margin-bottom: 1.5rem; }
+    .modal-info-row {
+      display: flex; align-items: flex-start; gap: .8rem;
+      background: rgba(255,255,255,0.04);
+      border-radius: 12px; padding: .8rem 1rem;
+      margin-bottom: .6rem;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .modal-info-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: .05rem; }
+    .modal-info-label { font-size: .68rem; color: var(--muted); font-weight: 800; text-transform: uppercase; letter-spacing: .05em; }
+    .modal-info-val { font-size: .9rem; font-weight: 700; color: var(--text); margin-top: .15rem; }
+
+    /* KAPSUL */
     .capsule-wrapper {
       background: radial-gradient(ellipse at 50% 0%, #100830 0%, #050508 100%);
       border-radius: 28px; padding: 2.5rem 1.5rem; text-align: center;
@@ -241,10 +423,7 @@
     .capsule-input::placeholder { color: rgba(255,255,255,.3); }
     .capsule-input:focus { border-color: var(--accent); }
     .capsule-messages { margin-top: 1.5rem; display: flex; flex-direction: column; gap: .8rem; text-align: left; position: relative; z-index: 1; }
-    .capsule-msg {
-      background: rgba(255,255,255,.06); border-radius: 14px; padding: 1rem 1.2rem;
-      border-left: 3px solid var(--accent);
-    }
+    .capsule-msg { background: rgba(255,255,255,.06); border-radius: 14px; padding: 1rem 1.2rem; border-left: 3px solid var(--accent); }
     .capsule-msg .msg-author { font-size: .72rem; color: var(--accent); font-weight: 800; margin-bottom: .3rem; }
     .capsule-msg .msg-text { color: rgba(255,255,255,.8); font-size: .85rem; line-height: 1.55; }
     .capsule-msg .msg-date { font-size: .68rem; color: rgba(255,255,255,.3); margin-top: .4rem; }
@@ -264,7 +443,7 @@
     }
     .btn-capsule:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(0,229,192,0.4); }
 
-    /* ── LINKS ── */
+    /* LINKS */
     .links-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; }
     .link-card {
       background: var(--card); border-radius: var(--radius); padding: 1.3rem;
@@ -276,11 +455,54 @@
     .link-icon { width: 50px; height: 50px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0; }
     .link-icon.drive { background: rgba(66,183,42,0.15); border: 1px solid rgba(66,183,42,0.3); }
     .link-icon.ig { background: linear-gradient(135deg,#f9ce34,#ee2a7b,#6228d7); }
-    .link-icon.tiktok { background: #111; border: 1px solid #333; }
+    .link-icon.spotify { background: #1DB954; border: 1px solid #1DB954; }
     .link-name { font-weight: 800; font-size: .92rem; color: var(--text); }
     .link-desc { font-size: .76rem; color: var(--muted); margin-top: .2rem; }
 
-    /* ── FOOTER ── */
+    /* SPOTIFY PLAYER */
+    .spotify-player {
+      position: fixed; bottom: 1rem; right: 1rem; z-index: 150;
+      background: rgba(10,10,20,0.95);
+      border: 1px solid rgba(29,185,84,0.4);
+      border-radius: 18px;
+      padding: .8rem 1rem;
+      display: flex; align-items: center; gap: .75rem;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.8);
+      backdrop-filter: blur(20px);
+      min-width: 230px;
+      transition: all .3s;
+    }
+    .spotify-player:hover { border-color: rgba(29,185,84,0.8); }
+    .spotify-disc {
+      width: 42px; height: 42px; border-radius: 50%;
+      background: linear-gradient(135deg, #1DB954, #0a3a1a);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem; flex-shrink: 0;
+      animation: spin 4s linear infinite;
+      animation-play-state: paused;
+      border: 2px solid rgba(29,185,84,0.5);
+    }
+    .spotify-disc.playing { animation-play-state: running; }
+    @keyframes spin { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+    .spotify-info { flex: 1; overflow: hidden; }
+    .spotify-title { font-size: .78rem; font-weight: 800; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .spotify-artist { font-size: .67rem; color: rgba(255,255,255,.5); font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .spotify-controls { display: flex; align-items: center; gap: .4rem; }
+    .spotify-btn {
+      width: 30px; height: 30px; border-radius: 50%;
+      background: rgba(29,185,84,0.15); border: 1px solid rgba(29,185,84,0.3);
+      color: #1DB954; font-size: .85rem;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; transition: all .2s; padding: 0;
+    }
+    .spotify-btn:hover { background: rgba(29,185,84,0.3); }
+    .spotify-progress {
+      position: absolute; bottom: 0; left: 0; height: 3px;
+      background: #1DB954; border-radius: 0 0 18px 18px;
+      width: 0%; transition: width 0.5s linear;
+    }
+
+    /* FOOTER */
     footer {
       background: var(--bg2); border-top: 1px solid var(--border);
       color: var(--muted); text-align: center; padding: 2rem 1rem;
@@ -288,7 +510,7 @@
     }
     footer span { color: var(--secondary); }
 
-    /* ── MOBILE NAV ── */
+    /* MOBILE */
     @media(max-width: 640px) {
       .nav-links {
         display: none; flex-direction: column;
@@ -300,21 +522,13 @@
         box-shadow: 0 8px 32px rgba(0,0,0,0.9);
       }
       .nav-links.open { display: flex; }
-      .nav-links a {
-        font-size: 1rem;
-        color: #e0e0ff !important;
-        background: transparent;
-        border-radius: 10px;
-        padding: .65rem 1rem;
-        border: none;
-        border-bottom: 1px solid rgba(124,111,255,0.15);
-      }
+      .nav-links a { font-size: 1rem; color: #e0e0ff !important; background: transparent; border-radius: 10px; padding: .65rem 1rem; border: none; border-bottom: 1px solid rgba(124,111,255,0.15); }
       .nav-links li:last-child a { border-bottom: none; }
-      .nav-links a:hover {
-        background: rgba(124,111,255,0.15);
-        color: #c4b5fd !important;
-      }
+      .nav-links a:hover { background: rgba(124,111,255,0.15); color: #c4b5fd !important; }
       .hamburger { display: flex; }
+      .spotify-player { left: 1rem; right: 1rem; min-width: unset; bottom: 1rem; }
+      .tree-multi-row { gap: 1rem; }
+      .org-pill { font-size: .75rem; padding: .45rem 1rem; }
     }
   </style>
 </head>
@@ -341,7 +555,7 @@
   <div class="hero-glow"></div>
   <div class="hero-badge">🏫 MTsN 6 BANJAR — TAHUN AJARAN 2025/2026</div>
   <div class="hero-emoji">🌙</div>
-  <h1>Kelas VII D</h1>
+  <h1>Kelas VIII D</h1>
   <div class="hero-school">MTsN 6 Banjar</div>
   <p>Satu kelas, seribu kenangan. Bersama kita bisa! ✨</p>
   <div class="hero-btns">
@@ -352,8 +566,9 @@
     <a href="https://instagram.com/kelaskita" target="_blank" title="Instagram">
       <svg width="17" height="17" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
     </a>
-    <a href="https://tiktok.com/@kelaskita" target="_blank" title="TikTok">
-      <svg width="17" height="17" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.28 8.28 0 004.84 1.55V6.79a4.85 4.85 0 01-1.07-.1z"/></svg>
+    <!-- Spotify icon instead of TikTok -->
+    <a href="https://open.spotify.com" target="_blank" title="Spotify Playlist Kelas">
+      <svg width="17" height="17" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
     </a>
   </div>
 </div>
@@ -363,7 +578,7 @@
 <section id="galeri">
   <span class="section-tag tag-pink">📸 Galeri</span>
   <h2 class="section-title">Momen Berharga Kita</h2>
-  <p class="section-sub">Koleksi foto kenangan kelas VII D yang tak terlupakan.</p>
+  <p class="section-sub">Koleksi foto kenangan kelas VIII D yang tak terlupakan.</p>
   <div class="gallery-grid">
     <div class="gallery-item"><span>🌙</span><div class="gallery-label">Bukber Kelas #1</div></div>
     <div class="gallery-item"><span>🌙</span><div class="gallery-label">Bukber Kelas #2</div></div>
@@ -376,54 +591,102 @@
   </div>
 </section>
 
-<!-- ORGANISASI -->
+<!-- ORGANISASI - TREE STYLE like screenshot -->
 <div class="section-divider"></div>
 <section id="organisasi">
   <span class="section-tag tag-yellow">👑 Struktur Kelas</span>
   <h2 class="section-title">Bagan Organisasi</h2>
-  <p class="section-sub">Pengurus kelas VII D MTsN 6 Banjar periode 2025/2026.</p>
-  <div class="org-chart">
-    <div class="org-row">
-      <div class="org-card wali">
-        <div class="org-avatar">👩‍🏫</div>
-        <div class="org-role">Wali Kelas</div>
-        <div class="org-name">Ibu Anni Hanifa</div>
+  <p class="section-sub">Pengurus kelas VIII D MTsN 6 Banjar periode 2025/2026. Klik nama untuk lihat profil.</p>
+
+  <div class="org-tree" id="orgTree">
+
+    <!-- WALI KELAS -->
+    <div class="tree-row org-reveal">
+      <div class="org-role-label">Wali Kelas</div>
+      <div class="org-pill wali-kelas" onclick="openModal('wali')">👩‍🏫 Ibu Anni Hanifa Soesilo S.Pd</div>
+    </div>
+    <div class="v-line org-reveal"></div>
+
+    <!-- KETUA + WAKIL row with horizontal connector -->
+    <div class="org-reveal" style="display:flex;flex-direction:column;align-items:center;width:100%">
+      <div style="display:flex;align-items:flex-start;justify-content:center;gap:0;width:100%;">
+        <!-- Left branch: Ketua -->
+        <div style="display:flex;flex-direction:column;align-items:center;flex:1;">
+          <div class="dot-circle"></div>
+          <div class="v-line-short"></div>
+          <div class="org-role-label">Ketua Kelas</div>
+          <div class="org-pill ketua-kelas" onclick="openModal('ketua')">👑 nayomi santya eddy</div>
+        </div>
+        <!-- Horizontal line between -->
+        <div style="flex:1;display:flex;align-items:flex-start;padding-top:4px;">
+          <div style="flex:1;height:2px;background:linear-gradient(90deg,#7C6FFF,#FF6B9D);margin-top:0;"></div>
+        </div>
+        <!-- Right branch: Wakil -->
+        <div style="display:flex;flex-direction:column;align-items:center;flex:1;">
+          <div class="dot-circle"></div>
+          <div class="v-line-short"></div>
+          <div class="org-role-label">Wakil Ketua</div>
+          <div class="org-pill wakil-ketua" onclick="openModal('wakil')">🌟 hanif mu'tashimi</div>
+        </div>
       </div>
     </div>
-    <div class="org-line"></div>
-    <div class="org-row">
-      <div class="org-card ketua">
-        <div class="org-avatar">👑</div>
-        <div class="org-role">Ketua Kelas</div>
-        <div class="org-name">Nayomi Santya Eddy</div>
+    <div class="v-line org-reveal"></div>
+
+    <!-- SEKRETARIS + BENDAHARA -->
+    <div class="org-reveal" style="display:flex;flex-direction:column;align-items:center;width:100%">
+      <div style="display:flex;align-items:flex-start;justify-content:center;gap:0;width:100%;">
+        <div style="display:flex;flex-direction:column;align-items:center;flex:1;">
+          <div class="dot-circle"></div>
+          <div class="v-line-short"></div>
+          <div class="org-role-label">Sekretaris</div>
+          <div style="display:flex;flex-direction:column;gap:.5rem;align-items:center;">
+            <div class="org-pill sekretaris" onclick="openModal('sekre1')">📝 afiqah nanda alea</div>
+            <div class="org-pill sekretaris" onclick="openModal('sekre2')">📝 ......</div>
+          </div>
+        </div>
+        <div style="flex:1;display:flex;align-items:flex-start;padding-top:4px;">
+          <div style="flex:1;height:2px;background:linear-gradient(90deg,#7C6FFF,#FF6B9D);"></div>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;flex:1;">
+          <div class="dot-circle"></div>
+          <div class="v-line-short"></div>
+          <div class="org-role-label">Bendahara</div>
+          <div style="display:flex;flex-direction:column;gap:.5rem;align-items:center;">
+            <div class="org-pill bendahara" onclick="openModal('bend1')">💰 rossa mahyudin</div>
+            <div class="org-pill bendahara" onclick="openModal('bend2')">💎 wafiq azizah fakhri</div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="org-line"></div>
-    <div class="org-row">
-      <div class="org-card wakil">
-        <div class="org-avatar">🌟</div>
-        <div class="org-role">Wakil Ketua</div>
-        <div class="org-name">Hanif Mu'tashimi</div>
+    <div class="v-line org-reveal"></div>
+
+    <!-- KEAMANAN + KEBERSIHAN -->
+    <div class="org-reveal" style="display:flex;flex-direction:column;align-items:center;width:100%">
+      <div style="display:flex;align-items:flex-start;justify-content:center;gap:0;width:100%;">
+        <div style="display:flex;flex-direction:column;align-items:center;flex:1;">
+          <div class="dot-circle"></div>
+          <div class="v-line-short"></div>
+          <div class="org-role-label">Keamanan</div>
+          <div style="display:flex;flex-direction:column;gap:.5rem;align-items:center;">
+            <div class="org-pill keamanan" onclick="openModal('aman1')">🛡 muhammad hafi</div>
+            <div class="org-pill keamanan" onclick="openModal('aman2')">🛡 ......</div>
+          </div>
+        </div>
+        <div style="flex:1;display:flex;align-items:flex-start;padding-top:4px;">
+          <div style="flex:1;height:2px;background:linear-gradient(90deg,#7C6FFF,#FF6B9D);"></div>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;flex:1;">
+          <div class="dot-circle"></div>
+          <div class="v-line-short"></div>
+          <div class="org-role-label">Kebersihan</div>
+          <div style="display:flex;flex-direction:column;gap:.5rem;align-items:center;">
+            <div class="org-pill kebersihan" onclick="openModal('bersih1')">🌿 ......</div>
+            <div class="org-pill kebersihan" onclick="openModal('bersih2')">🌿 .....</div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="org-line"></div>
-    <div class="org-row">
-      <div class="org-card sekre">
-        <div class="org-avatar">📝</div>
-        <div class="org-role">Sekretaris</div>
-        <div class="org-name">Afiqah Nanda Alea</div>
-      </div>
-      <div class="org-card bend">
-        <div class="org-avatar">💰</div>
-        <div class="org-role">Bendahara 1</div>
-        <div class="org-name">Wafiq Azizah Fakhri</div>
-      </div>
-      <div class="org-card bend">
-        <div class="org-avatar">💎</div>
-        <div class="org-role">Bendahara 2</div>
-        <div class="org-name">Rossa Mahyudin</div>
-      </div>
-    </div>
+
   </div>
 </section>
 
@@ -432,7 +695,7 @@
 <section id="siswa">
   <span class="section-tag tag-purple">🎒 Siswa</span>
   <h2 class="section-title">Daftar Siswa</h2>
-  <p class="section-sub">Total <strong style="color:var(--primary)">32 siswa</strong> di kelas VIII D.</p>
+  <p class="section-sub">Total <strong style="color:var(--primary)">32 siswa</strong> di kelas VIII D. Klik nama untuk profil!</p>
   <div class="search-bar">
     <input type="text" id="searchInput" placeholder="🔍  Cari nama siswa..." oninput="filterStudents()"/>
   </div>
@@ -470,7 +733,7 @@
       <div class="link-icon drive">📁</div>
       <div>
         <div class="link-name">Google Drive</div>
-        <div class="link-desc">File & tugas kelas VII D</div>
+        <div class="link-desc">File & tugas kelas VIII D</div>
       </div>
     </a>
     <a href="https://instagram.com/kelaskita" target="_blank" class="link-card">
@@ -482,13 +745,13 @@
         <div class="link-desc">@kelaskita</div>
       </div>
     </a>
-    <a href="https://tiktok.com/@kelaskita" target="_blank" class="link-card">
-      <div class="link-icon tiktok">
-        <svg width="22" height="22" fill="#fff" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.28 8.28 0 004.84 1.55V6.79a4.85 4.85 0 01-1.07-.1z"/></svg>
+    <a href="https://open.spotify.com" target="_blank" class="link-card">
+      <div class="link-icon spotify">
+        <svg width="22" height="22" fill="#fff" viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
       </div>
       <div>
-        <div class="link-name">TikTok Kelas</div>
-        <div class="link-desc">@kelaskita</div>
+        <div class="link-name">Spotify Playlist</div>
+        <div class="link-desc">Playlist Kelas VIII D 🎵</div>
       </div>
     </a>
   </div>
@@ -500,123 +763,285 @@
   <p style="margin-top:.4rem;font-size:.76rem;opacity:.5">Kenangan indah yang tak akan pernah terlupakan 🌙✨</p>
 </footer>
 
+<!-- SPOTIFY FLOATING PLAYER -->
+<div class="spotify-player" id="spotifyPlayer">
+  <div class="spotify-disc" id="spotifyDisc">🎵</div>
+  <div class="spotify-info">
+    <div class="spotify-title" id="spotifyTitle">Memuat lagu...</div>
+    <div class="spotify-artist" id="spotifyArtist">Playlist VIII D</div>
+  </div>
+  <div class="spotify-controls">
+    <button class="spotify-btn" onclick="prevSong()" title="Sebelumnya">⏮</button>
+    <button class="spotify-btn" id="playBtn" onclick="togglePlay()" title="Play/Pause">▶</button>
+    <button class="spotify-btn" onclick="nextSong()" title="Berikutnya">⏭</button>
+  </div>
+  <div class="spotify-progress" id="spotifyProgress"></div>
+</div>
+
+<!-- PROFILE MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
+  <div class="modal-card">
+    <div class="modal-close" onclick="closeModal()">✕</div>
+    <div class="modal-avatar" id="modalAvatar"></div>
+    <div class="modal-name" id="modalName"></div>
+    <div class="modal-no" id="modalNo"></div>
+    <div class="modal-info-row">
+      <div class="modal-info-icon">🎂</div>
+      <div>
+        <div class="modal-info-label">Tanggal Lahir</div>
+        <div class="modal-info-val" id="modalBirth"></div>
+      </div>
+    </div>
+    <div class="modal-info-row">
+      <div class="modal-info-icon">🎯</div>
+      <div>
+        <div class="modal-info-label">Hobi</div>
+        <div class="modal-info-val" id="modalHobi"></div>
+      </div>
+    </div>
+    <div class="modal-info-row">
+      <div class="modal-info-icon">💫</div>
+      <div>
+        <div class="modal-info-label">Motto / Kata-kata</div>
+        <div class="modal-info-val" id="modalMotto"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<audio id="bgAudio" loop></audio>
+
 <script>
-  // ── NAV TOGGLE ──
-  function toggleNav() {
-    document.getElementById('navLinks').classList.toggle('open');
-  }
-  document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => {
-    document.getElementById('navLinks').classList.remove('open');
-  }));
+// ── NAV ──
+function toggleNav() { document.getElementById('navLinks').classList.toggle('open'); }
+document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => {
+  document.getElementById('navLinks').classList.remove('open');
+}));
 
-  // ── STARS ──
-  function makeStars(id, count) {
-    const c = document.getElementById(id);
-    if (!c) return;
-    for (let i = 0; i < count; i++) {
-      const s = document.createElement('div');
-      s.classList.add('star-dot');
-      const sz = Math.random() * 2.5 + .5;
-      s.style.cssText = `width:${sz}px;height:${sz}px;top:${Math.random()*100}%;left:${Math.random()*100}%;animation-delay:${Math.random()*3}s;animation-duration:${1.5+Math.random()*2.5}s`;
-      c.appendChild(s);
+// ── STARS ──
+function makeStars(id, count) {
+  const c = document.getElementById(id); if (!c) return;
+  for (let i = 0; i < count; i++) {
+    const s = document.createElement('div'); s.classList.add('star-dot');
+    const sz = Math.random() * 2.5 + .5;
+    s.style.cssText = `width:${sz}px;height:${sz}px;top:${Math.random()*100}%;left:${Math.random()*100}%;animation-delay:${Math.random()*3}s;animation-duration:${1.5+Math.random()*2.5}s`;
+    c.appendChild(s);
+  }
+}
+makeStars('heroStars', 80);
+makeStars('capsuleStars', 100);
+
+// ── SCROLL REVEAL for org ──
+const revealEls = document.querySelectorAll('.org-reveal');
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach((entry, idx) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => { entry.target.classList.add('visible'); }, idx * 120);
+      revealObs.unobserve(entry.target);
     }
-  }
-  makeStars('heroStars', 80);
-  makeStars('capsuleStars', 100);
+  });
+}, { threshold: 0.15 });
+revealEls.forEach(el => revealObs.observe(el));
 
-  // ── STUDENTS ──
-  const STUDENTS = [
-    {no:1,  name:'Afiqah Nanda Alea',         emoji:'📝'},
-    {no:2,  name:'Aisya Sabrina',              emoji:'🌸'},
-    {no:3,  name:'Allysa Zhafirah',            emoji:'🦋'},
-    {no:4,  name:'Aysha Dwi Maritza',          emoji:'🌺'},
-    {no:5,  name:'Eiliyah Qonitah',            emoji:'⭐'},
-    {no:6,  name:'Fatimatuzzahra',             emoji:'🌷'},
-    {no:7,  name:'Hafsoh',                     emoji:'💫'},
-    {no:8,  name:"Hanif Mu'tashimi",           emoji:'🏅'},
-    {no:9,  name:'Jihan Hafizah',              emoji:'📚'},
-    {no:10, name:'Khofifah Hadi Prawati',      emoji:'🌼'},
-    {no:11, name:'Muhammad Amin Musyaffa',     emoji:'⚽'},
-    {no:12, name:'M. Amin Rahmatullah',        emoji:'🎯'},
-    {no:13, name:'M. Aufar Humaidi',           emoji:'🚀'},
-    {no:14, name:'M. Azka Abqary',             emoji:'🎮'},
-    {no:15, name:'M. Fauzan Madani',           emoji:'💪'},
-    {no:16, name:'M. Hafi',                    emoji:'🌙'},
-    {no:17, name:'M. Nabil Tsaqif',            emoji:'🦅'},
-    {no:18, name:'Muhammad Wildan',            emoji:'🎸'},
-    {no:19, name:'M. Zaidan Iriady',           emoji:'⚡'},
-    {no:20, name:'Nasywa Haniya Mahdy',        emoji:'🌈'},
-    {no:21, name:'Nayomi Santya Eddy',         emoji:'👑'},
-    {no:22, name:'Noer Rosyidah El Hidayah',   emoji:'🌻'},
-    {no:23, name:'Nur Syifa Salsabila Wahyudi',emoji:'💐'},
-    {no:24, name:'Queensha Aurelia Abidin',    emoji:'👸'},
-    {no:25, name:'Raya Alisa',                 emoji:'🌟'},
-    {no:26, name:'Reva Aulia Putri',           emoji:'🎀'},
-    {no:27, name:'Rossa Mahyudin',             emoji:'🌹'},
-    {no:28, name:'Safa Alzena Azalia',         emoji:'✨'},
-    {no:29, name:'Sitaloka Azzahra',           emoji:'🦄'},
-    {no:30, name:'St. Rahmah',                 emoji:'🕊️'},
-    {no:31, name:'Syakira Firna Lamarta',      emoji:'🎵'},
-    {no:32, name:'Wafiq Azizah Fakhri',        emoji:'💎'},
-  ];
+// ── STUDENT DATA ──
+const STUDENTS = [
+  {no:1,  name:'Afiqah Nanda Alea',          emoji:'📝', birth:'12 Januari 2011', hobi:'Membaca, Menulis', motto:'Ilmu adalah cahaya'},
+  {no:2,  name:'Aisya Sabrina',               emoji:'🌸', birth:'3 Maret 2011',    hobi:'Menyanyi, Memasak', motto:'Senyum adalah ibadah'},
+  {no:3,  name:'Allysa Zhafirah',             emoji:'🦋', birth:'7 Februari 2011', hobi:'Menggambar, Membaca', motto:'Be yourself!'},
+  {no:4,  name:'Aysha Dwi Maritza',           emoji:'🌺', birth:'22 April 2011',   hobi:'Menari, Fotografi', motto:'Hidup penuh warna'},
+  {no:5,  name:'Eiliyah Qonitah',             emoji:'⭐', birth:'15 Mei 2011',     hobi:'Mengaji, Membaca', motto:'Sabar dan ikhlas'},
+  {no:6,  name:'Fatimatuzzahra',              emoji:'🌷', birth:'9 Juni 2011',     hobi:'Memasak, Berkebun', motto:'Rezeki tidak akan tertukar'},
+  {no:7,  name:'Hafsoh',                      emoji:'💫', birth:'1 Juli 2011',     hobi:'Olahraga, Membaca', motto:'Semangat pantang menyerah'},
+  {no:8,  name:"Hanif Mu'tashimi",            emoji:'🏅', birth:'18 Agustus 2010', hobi:'Basket, Gaming', motto:'Kerja keras pasti berhasil'},
+  {no:9,  name:'Jihan Hafizah',               emoji:'📚', birth:'26 September 2011',hobi:'Membaca, Menulis puisi', motto:'Buku adalah jendela dunia'},
+  {no:10, name:'Khofifah Hadi Prawati',       emoji:'🌼', birth:'4 Oktober 2011',  hobi:'Menjahit, Menggambar', motto:'Kreativitas tanpa batas'},
+  {no:11, name:'Muhammad Amin Musyaffa',      emoji:'⚽', birth:'11 November 2010',hobi:'Sepak bola, Gaming', motto:'Gol adalah impian'},
+  {no:12, name:'M. Amin Rahmatullah',         emoji:'🎯', birth:'29 Desember 2010',hobi:'Panahan, Membaca', motto:'Fokus pada tujuan'},
+  {no:13, name:'M. Aufar Humaidi',            emoji:'🚀', birth:'6 Januari 2011',  hobi:'Astronomi, Gaming', motto:'Raih bintang setinggi langit'},
+  {no:14, name:'M. Azka Abqary',              emoji:'🎮', birth:'14 Februari 2011',hobi:'Coding, Gaming', motto:'Technology changes the world'},
+  {no:15, name:'M. Fauzan Madani',            emoji:'💪', birth:'23 Maret 2011',   hobi:'Gym, Olahraga, boxing', motto:'No pain no gain'},
+  {no:16, name:'M. Hafi',                     emoji:'🌙', birth:'30 April 2011',   hobi:'Mengaji, Membaca', motto:'Malam penuh berkah'},
+  {no:17, name:'M. Nabil Tsaqif',             emoji:'🦅', birth:'8 Mei 2011',      hobi:'Badminton, Menulis', motto:'Terbang tinggi seperti elang'},
+  {no:18, name:'Muhammad Wildan',             emoji:'🎸', birth:'17 Juni 2011',    hobi:'Musik, Gitar', motto:'Musik menyatukan hati'},
+  {no:19, name:'M. Zaidan Iriady',            emoji:'⚡', birth:'25 Juli 2011',    hobi:'Renang, Lari', motto:'Cepat seperti kilat'},
+  {no:20, name:'Nasywa Haniya Mahdy',         emoji:'🌈', birth:'2 Agustus 2011',  hobi:'Melukis, Menari', motto:'Hidup berwarna seperti pelangi'},
+  {no:21, name:'Nayomi Santya Eddy',          emoji:'👑', birth:'10 September 2011',hobi:'Kepemimpinan, Menyanyi', motto:'Pemimpin yang baik lahir dari hati'},
+  {no:22, name:'Noer Rosyidah El Hidayah',   emoji:'🌻', birth:'19 Oktober 2011', hobi:'Berkebun, Membaca', motto:'Tumbuh seperti bunga matahari'},
+  {no:23, name:'Nur Syifa Salsabila Wahyudi',emoji:'💐', birth:'27 November 2011',hobi:'Memasak, Fotografi', motto:'Indahkan setiap momen'},
+  {no:24, name:'Queensha Aurelia Abidin',    emoji:'👸', birth:'5 Desember 2011', hobi:'Fashion, Menyanyi', motto:'Cantik luar dan dalam'},
+  {no:25, name:'Raya Alisa',                  emoji:'🌟', birth:'13 Januari 2012', hobi:'Membaca, Traveling', motto:'Dunia adalah kelas terbesar'},
+  {no:26, name:'Reva Aulia Putri',            emoji:'🎀', birth:'21 Februari 2012',hobi:'Menari, Crafting', motto:'Kreasi tanpa henti'},
+  {no:27, name:'Rossa Mahyudin',              emoji:'🌹', birth:'1 Maret 2012',    hobi:'Menggambar, Menyanyi', motto:'Seni adalah jiwa'},
+  {no:28, name:'Safa Alzena Azalia',          emoji:'✨', birth:'9 April 2012',    hobi:'Fotografi, Membaca', motto:'Setiap momen berharga'},
+  {no:29, name:'Sitaloka Azzahra',            emoji:'🦄', birth:'17 Mei 2012',     hobi:'Melukis, Menari', motto:'Unik adalah kekuatan'},
+  {no:30, name:'St. Rahmah',                  emoji:'🕊️', birth:'25 Juni 2012',    hobi:'Mengaji, Memasak', motto:'Damai dalam hati'},
+  {no:31, name:'Syakira Firna Lamarta',       emoji:'🎵', birth:'3 Juli 2012',     hobi:'Musik, Nyanyi', motto:'Hidup adalah lagu'},
+  {no:32, name:'Wafiq Azizah Fakhri',         emoji:'💎', birth:'11 Agustus 2012', hobi:'Akuntansi, Membaca', motto:'Hemat pangkal kaya'},
+];
 
-  const avatarBgs = [
-    'rgba(124,111,255,0.2)','rgba(255,107,157,0.2)','rgba(0,229,192,0.15)',
-    'rgba(255,209,102,0.2)','rgba(100,149,237,0.2)','rgba(255,99,132,0.15)'
-  ];
+// ── ORG MEMBERS (for org pill clicks) ──
+const ORG_DATA = {
+  wali:    {name:'Ibu Anni Hanifa Soesilo S.Pd', emoji:'👩‍🏫', no:'Wali Kelas', birth:'—', hobi:'Mengajar, Mendidik', motto:'Guru adalah pelita bangsa'},
+  ketua:   {name:'nayomi santya eddy', emoji:'👑', no:'Ketua Kelas', birth:'—', hobi:'Kepemimpinan, Organisasi', motto:'Bersama kita bisa'},
+  wakil:   {name:"hanif mu'tashimi", emoji:'🌟', no:'Wakil Ketua', birth:'—', hobi:'Olahraga, Membaca', motto:'Kuat dan tangguh'},
+  sekre1:  {name:'afiqah nanda alea', emoji:'📝', no:'Sekretaris 1', birth:'—', hobi:'Menulis, Mengetik', motto:'Rapi dan teliti'},
+  sekre2:  {name:'......', emoji:'📋', no:'Sekretaris 2', birth:'—', hobi:'Menggambar, Menulis', motto:'Catat semua momen'},
+  bend1:   {name:'rossa mahyudin', emoji:'💰', no:'Bendahara 1', birth:'—', hobi:'Akuntansi, Menabung', motto:'Hemat pangkal kaya'},
+  bend2:   {name:'wafiq azizah fakhri', emoji:'💎', no:'Bendahara 2', birth:'—', hobi:'Matematika, Membaca', motto:'Hitung dengan cermat'},
+  aman1:   {name:'muhammad hafi', emoji:'🛡️', no:'Keamanan 1', birth:'—', hobi:'Bela diri, Olahraga', motto:'Jaga ketertiban'},
+  aman2:   {name:'.....', emoji:'🛡️', no:'Keamanan 2', birth:'—', hobi:'Lari, Gym', motto:'Aman dan tertib'},
+  bersih1: {name:'.......', emoji:'🌿', no:'Kebersihan 1', birth:'—', hobi:'Berkebun, Olahraga', motto:'Bersih pangkal sehat'},
+  bersih2: {name:'.......', emoji:'🌱', no:'Kebersihan 2', birth:'—', hobi:'Lingkungan, Membaca', motto:'Jaga bumi kita'},
+};
 
-  function renderStudents(list) {
-    document.getElementById('studentGrid').innerHTML = list.map(s => `
-      <div class="student-card">
-        <div class="student-avatar" style="background:${avatarBgs[s.no % avatarBgs.length]}">${s.emoji}</div>
-        <div class="student-info">
-          <div class="student-name">${s.name}</div>
-          <div class="student-no">No. Absen ${s.no}</div>
-        </div>
+// ── AVATAR BACKGROUNDS ──
+const avatarBgs = [
+  'rgba(124,111,255,0.2)','rgba(255,107,157,0.2)','rgba(0,229,192,0.15)',
+  'rgba(255,209,102,0.2)','rgba(100,149,237,0.2)','rgba(255,99,132,0.15)'
+];
+
+function renderStudents(list) {
+  document.getElementById('studentGrid').innerHTML = list.map(s => `
+    <div class="student-card" onclick="openStudentModal(${s.no})">
+      <div class="student-avatar" style="background:${avatarBgs[s.no % avatarBgs.length]}">${s.emoji}</div>
+      <div class="student-info">
+        <div class="student-name">${s.name}</div>
+        <div class="student-no">No. Absen ${s.no}</div>
       </div>
-    `).join('');
-  }
-  renderStudents(STUDENTS);
+    </div>
+  `).join('');
+}
+renderStudents(STUDENTS);
 
-  function filterStudents() {
-    const q = document.getElementById('searchInput').value.toLowerCase();
-    renderStudents(STUDENTS.filter(s => s.name.toLowerCase().includes(q)));
-  }
+function filterStudents() {
+  const q = document.getElementById('searchInput').value.toLowerCase();
+  renderStudents(STUDENTS.filter(s => s.name.toLowerCase().includes(q)));
+}
 
-  // ── KAPSUL WAKTU ──
-  const seedMessages = [
-    {name:'Nayomi', text:'Semoga kita semua sukses dan masih bersahabat sampai kapanpun! 💪 Tetap semangat VII D!', date:'1 Juni 2026'},
-    {name:'Hanif',  text:'Kenangan di kelas ini pasti akan selalu aku ingat. Kalian semua luar biasa! ❤️', date:'1 Juni 2026'},
-  ];
+// ── MODAL ──
+function openModal(key) {
+  const d = ORG_DATA[key]; if (!d) return;
+  document.getElementById('modalAvatar').textContent = d.emoji;
+  document.getElementById('modalAvatar').style.background = 'rgba(124,111,255,0.15)';
+  document.getElementById('modalName').textContent = d.name;
+  document.getElementById('modalNo').textContent = d.no;
+  document.getElementById('modalBirth').textContent = d.birth;
+  document.getElementById('modalHobi').textContent = d.hobi;
+  document.getElementById('modalMotto').textContent = d.motto;
+  document.getElementById('modalOverlay').classList.add('open');
+}
 
-  function renderCapsule() {
-    let msgs = [];
-    try { msgs = JSON.parse(localStorage.getItem('capsule_viid') || '[]'); } catch(e){}
-    const all = [...seedMessages, ...msgs];
-    document.getElementById('capsuleMessages').innerHTML = all.map(m => `
-      <div class="capsule-msg">
-        <div class="msg-author">✉️ ${m.name}</div>
-        <div class="msg-text">${m.text}</div>
-        <div class="msg-date">📅 ${m.date}</div>
-      </div>
-    `).join('');
-  }
+function openStudentModal(no) {
+  const s = STUDENTS.find(x => x.no === no); if (!s) return;
+  document.getElementById('modalAvatar').textContent = s.emoji;
+  document.getElementById('modalAvatar').style.background = avatarBgs[s.no % avatarBgs.length];
+  document.getElementById('modalName').textContent = s.name;
+  document.getElementById('modalNo').textContent = `No. Absen ${s.no}`;
+  document.getElementById('modalBirth').textContent = s.birth;
+  document.getElementById('modalHobi').textContent = s.hobi;
+  document.getElementById('modalMotto').textContent = s.motto;
+  document.getElementById('modalOverlay').classList.add('open');
+}
+
+function closeModal() { document.getElementById('modalOverlay').classList.remove('open'); }
+function closeModalOutside(e) { if (e.target === document.getElementById('modalOverlay')) closeModal(); }
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+// ── KAPSUL ──
+const seedMessages = [
+  {name:'Nayomi', text:'Semoga kita semua sukses dan masih bersahabat sampai kapanpun! 💪', date:'1 Juni 2026'},
+  {name:'Hanif',  text:'Kenangan di kelas ini pasti akan selalu aku ingat. Kalian semua luar biasa! ❤️', date:'1 Juni 2026'},
+];
+function renderCapsule() {
+  let msgs = [];
+  try { msgs = JSON.parse(localStorage.getItem('capsule_viid') || '[]'); } catch(e){}
+  const all = [...seedMessages, ...msgs];
+  document.getElementById('capsuleMessages').innerHTML = all.map(m => `
+    <div class="capsule-msg">
+      <div class="msg-author">✉️ ${m.name}</div>
+      <div class="msg-text">${m.text}</div>
+      <div class="msg-date">📅 ${m.date}</div>
+    </div>
+  `).join('');
+}
+renderCapsule();
+
+function addCapsuleMessage() {
+  const name = document.getElementById('capsuleName').value.trim();
+  const text = document.getElementById('capsuleMsg').value.trim();
+  if (!name || !text) { alert('Isi nama dan pesan dulu ya! 😊'); return; }
+  let msgs = [];
+  try { msgs = JSON.parse(localStorage.getItem('capsule_viid') || '[]'); } catch(e){}
+  const now = new Date().toLocaleDateString('id-ID',{day:'numeric',month:'long',year:'numeric'});
+  msgs.push({name, text, date: now});
+  localStorage.setItem('capsule_viid', JSON.stringify(msgs));
+  document.getElementById('capsuleName').value = '';
+  document.getElementById('capsuleMsg').value = '';
   renderCapsule();
+  alert('Pesanmu berhasil masuk ke kapsul waktu! 🚀✨');
+}
 
-  function addCapsuleMessage() {
-    const name = document.getElementById('capsuleName').value.trim();
-    const text = document.getElementById('capsuleMsg').value.trim();
-    if (!name || !text) { alert('Isi nama dan pesan dulu ya! 😊'); return; }
-    let msgs = [];
-    try { msgs = JSON.parse(localStorage.getItem('capsule_viid') || '[]'); } catch(e){}
-    const now = new Date().toLocaleDateString('id-ID',{day:'numeric',month:'long',year:'numeric'});
-    msgs.push({name, text, date: now});
-    localStorage.setItem('capsule_viid', JSON.stringify(msgs));
-    document.getElementById('capsuleName').value = '';
-    document.getElementById('capsuleMsg').value = '';
-    renderCapsule();
-    alert('Pesanmu berhasil masuk ke kapsul waktu! 🚀✨');
+// ── SPOTIFY PLAYER (simulated, background audio) ──
+const PLAYLIST = [
+  { title: 'Cintaku', artist: 'Chrisye', src: '' },
+  { title: 'Separuh Aku', artist: 'Noah', src: '' },
+  { title: 'Kenangan Terindah', artist: 'Samsons', src: '' },
+  { title: 'Tak Gendong', artist: 'Mbah Surip', src: '' },
+  { title: 'Sempurna', artist: 'Andra & The Backbone', src: '' },
+  { title: 'Tentang Kita', artist: 'Padi', src: '' },
+];
+
+let currentSong = 0;
+let isPlaying = false;
+let progressInterval = null;
+let progress = 0;
+
+function updatePlayerUI() {
+  const song = PLAYLIST[currentSong];
+  document.getElementById('spotifyTitle').textContent = song.title;
+  document.getElementById('spotifyArtist').textContent = song.artist;
+  document.getElementById('spotifyDisc').classList.toggle('playing', isPlaying);
+  document.getElementById('playBtn').textContent = isPlaying ? '⏸' : '▶';
+}
+
+function togglePlay() {
+  isPlaying = !isPlaying;
+  updatePlayerUI();
+  if (isPlaying) {
+    startProgress();
+  } else {
+    clearInterval(progressInterval);
   }
+}
+
+function startProgress() {
+  clearInterval(progressInterval);
+  progressInterval = setInterval(() => {
+    progress += 100/200; // 200 ticks = ~20s per song
+    if (progress >= 100) {
+      progress = 0;
+      nextSong();
+      return;
+    }
+    document.getElementById('spotifyProgress').style.width = progress + '%';
+  }, 100);
+}
+
+function nextSong() {
+  progress = 0;
+  currentSong = (currentSong + 1) % PLAYLIST.length;
+  updatePlayerUI();
+  if (isPlaying) startProgress();
+}
+
+function prevSong() {
+  progress = 0;
+  currentSong = (currentSong - 1 + PLAYLIST.length) % PLAYLIST.length;
+  updatePlayerUI();
+  if (isPlaying) startProgress();
+}
+
+updatePlayerUI();
 </script>
 </body>
 </html>
