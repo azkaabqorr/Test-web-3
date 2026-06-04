@@ -132,7 +132,6 @@
     .gallery-item:nth-child(1){background:linear-gradient(135deg,#0d0d28,#1a0d42)}
     .gallery-item:nth-child(2){background:linear-gradient(135deg,#110820,#2e0820)}
     .gallery-item:nth-child(3){background:linear-gradient(135deg,#081420,#052535)}
-    .gallery-item:nth-child(4){background:linear-gradient(135deg,#061a12,#0a3020)}
     .gallery-upload-btn {
       border-radius: var(--radius); border: 2px dashed rgba(124,111,255,0.4);
       background: rgba(124,111,255,0.05);
@@ -583,7 +582,7 @@
     <div class="gallery-item"><span>🌙</span><div class="gallery-label">Bukber Kelas #1</div></div>
     <div class="gallery-item"><span>🌙</span><div class="gallery-label">Bukber Kelas #2</div></div>
     <div class="gallery-item"><span>🇮🇩</span><div class="gallery-label">Petugas Upacara</div></div>
-    <img src="IMG-20260603-WA0045.jpg" style="width: 100%; height: 100%; object-fit: contain;">
+    <img src="IMG-20260603-WA0045.jpg" style="width: 360px; height: 300px; object-fit: contain;">
 <div class="gallery-label">Petugas PT2</div>
 
    </div>
@@ -758,7 +757,7 @@
 
 <!-- FOOTER -->
 <footer>
-  <p>Made with <span>💵</span> oleh Azka Abqary · 2025/2026</p>
+  <p>Made with <span>💵</span> oleh Azka Abqary · rp20.000 belum bayar</p>
   <p style="margin-top:.4rem;font-size:.76rem;opacity:.5">Kenangan indah yang tak akan pernah terlupakan 🌙✨</p>
 </footer>
 
@@ -844,38 +843,38 @@ revealEls.forEach(el => revealObs.observe(el));
 
 // ── STUDENT DATA ──
 const STUDENTS = [
-  {no:1,  name:'Afiqah Nanda Alea',          emoji:'📝', birth:'12 Januari 2011', hobi:'Membaca, Menulis', motto:'Ilmu adalah cahaya'},
-  {no:2,  name:'Aisya Sabrina',               emoji:'🌸', birth:'3 Maret 2011',    hobi:'Menyanyi, Memasak', motto:'Senyum adalah ibadah'},
-  {no:3,  name:'Allysa Zhafirah',             emoji:'🦋', birth:'7 Februari 2011', hobi:'Menggambar, Membaca', motto:'Be yourself!'},
-  {no:4,  name:'Aysha Dwi Maritza',           emoji:'🌺', birth:'22 April 2011',   hobi:'Menari, Fotografi', motto:'Hidup penuh warna'},
-  {no:5,  name:'Eiliyah Qonitah',             emoji:'⭐', birth:'15 Mei 2011',     hobi:'Mengaji, Membaca', motto:'Sabar dan ikhlas'},
-  {no:6,  name:'Fatimatuzzahra',              emoji:'🌷', birth:'9 Juni 2011',     hobi:'Memasak, Berkebun', motto:'Rezeki tidak akan tertukar'},
-  {no:7,  name:'Hafsoh',                      emoji:'💫', birth:'1 Juli 2011',     hobi:'Olahraga, Membaca', motto:'Semangat pantang menyerah'},
-  {no:8,  name:"Hanif Mu'tashimi",            emoji:'🏅', birth:'18 Agustus 2010', hobi:'Basket, Gaming', motto:'Kerja keras pasti berhasil'},
+  {no:1,  name:'Afiqah Nanda Alea',           emoji:'📝', birth:'12 Januari 2011',  hobi:'Membaca, Menulis'      , motto:'Ilmu adalah cahaya'},
+  {no:2,  name:'Aisya Sabrina',               emoji:'🌸', birth:'3 Maret 2011',     hobi:'Menyanyi, Memasak'     , motto:'Senyum adalah ibadah'},
+  {no:3,  name:'Allysa Zhafirah',             emoji:'🦋', birth:'7 Februari 2011',  hobi:'Menggambar, Membaca'   , motto:'Be yourself!'},
+  {no:4,  name:'Aysha Dwi Maritza',           emoji:'🌺', birth:'22 April 2011',    hobi:'Menari, Fotografi'     , motto:'Hidup penuh warna'},
+  {no:5,  name:'Eiliyah Qonitah',             emoji:'⭐', birth:'15 Mei 2011',      hobi:'Mengaji, Membaca'      , motto:'Sabar dan ikhlas'},
+  {no:6,  name:'Fatimatuzzahra',              emoji:'🌷', birth:'9 Juni 2011',      hobi:'Memasak, Berkebun'     , motto:'Rezeki tidak akan tertukar'},
+  {no:7,  name:'Hafsoh',                      emoji:'💫', birth:'1 Juli 2011',      hobi:'Olahraga, Membaca'     , motto:'Semangat pantang menyerah'},
+  {no:8,  name:"Hanif Mu'tashimi",            emoji:'🏅', birth:'18 Agustus 2010',  hobi:'Basket, Gaming'        , motto:'Kerja keras pasti berhasil'},
   {no:9,  name:'Jihan Hafizah',               emoji:'📚', birth:'26 September 2011',hobi:'Membaca, Menulis puisi', motto:'Buku adalah jendela dunia'},
-  {no:10, name:'Khofifah Hadi Prawati',       emoji:'🌼', birth:'4 Oktober 2011',  hobi:'Menjahit, Menggambar', motto:'Kreativitas tanpa batas'},
-  {no:11, name:'Muhammad Amin Musyaffa',      emoji:'⚽', birth:'11 November 2010',hobi:'Sepak bola, Gaming', motto:'Gol adalah impian'},
-  {no:12, name:'M. Amin Rahmatullah',         emoji:'🎯', birth:'29 Desember 2010',hobi:'Panahan, Membaca', motto:'Fokus pada tujuan'},
-  {no:13, name:'M. Aufar Humaidi',            emoji:'🚀', birth:'6 Januari 2011',  hobi:'Astronomi, Gaming', motto:'Raih bintang setinggi langit'},
-  {no:14, name:'M. Azka Abqary',              emoji:'🎮', birth:'14 Februari 2011',hobi:'Coding, Gaming', motto:'Technology changes the world'},
-  {no:15, name:'M. Fauzan Madani',            emoji:'💪', birth:'23 Maret 2011',   hobi:'Gym, Olahraga, boxing', motto:'No pain no gain'},
-  {no:16, name:'M. Hafi',                     emoji:'🌙', birth:'30 April 2011',   hobi:'Mengaji, Membaca', motto:'Malam penuh berkah'},
-  {no:17, name:'qeqep',             emoji:'🦅', birth:'8 Mei 2011',      hobi:'yaping', motto:'yaping tiada habis'},
-  {no:18, name:'Muhammad Wildan',             emoji:'🎸', birth:'17 Juni 2011',    hobi:'Musik, Gitar', motto:'Musik menyatukan hati'},
-  {no:19, name:'M. Zaidan Iriady',            emoji:'⚡', birth:'25 Juli 2011',    hobi:'Renang, Lari', motto:'Cepat seperti kilat'},
-  {no:20, name:'Nasywa Haniya Mahdy',         emoji:'🌈', birth:'2 Agustus 2011',  hobi:'Melukis, Menari', motto:'Hidup berwarna seperti pelangi'},
+  {no:10, name:'Khofifah Hadi Prawati',       emoji:'🌼', birth:'4 Oktober 2011',   hobi:'Menjahit, Menggambar'  , motto:'Kreativitas tanpa batas'},
+  {no:11, name:'Muhammad Amin Musyaffa',      emoji:'⚽', birth:'11 November 2010', hobi:'Sepak bola, Gaming'    , motto:'Gol adalah impian'},
+  {no:12, name:'M. Amin Rahmatullah',         emoji:'🎯', birth:'29 Desember 2010', hobi:'Panahan, Membaca'      , motto:'Fokus pada tujuan'},
+  {no:13, name:'M. Aufar Humaidi',            emoji:'🚀', birth:'6 Januari 2011',   hobi:'Astronomi, Gaming'     , motto:'Raih bintang setinggi langit'},
+  {no:14, name:'M. Azka Abqary',              emoji:'🎮', birth:'14 Februari 2011', hobi:'Coding, Gaming'        , motto:'Technology changes the world'},
+  {no:15, name:'M. Fauzan Madani',            emoji:'💪', birth:'23 Maret 2011',    hobi:'Gym, Olahraga, boxing' , motto:'No pain no gain'},
+  {no:16, name:'M. Hafi',                     emoji:'🌙', birth:'30 April 2011',    hobi:'Mengaji, Membaca'      , motto:'Malam penuh berkah'},
+  {no:17, name:'qeqep',                       emoji:'🦅', birth:'8 Mei 2011',       hobi:'yaping'                , motto:'yaping tiada habis'},
+  {no:18, name:'Muhammad Wildan',             emoji:'🎸', birth:'17 Juni 2011',     hobi:'Musik, Gitar'          , motto:'Musik menyatukan hati'},
+  {no:19, name:'M. Zaidan Iriady',            emoji:'⚡', birth:'25 Juli 2011',     hobi:'Renang, Lari'          , motto:'Cepat seperti kilat'},
+  {no:20, name:'Nasywa Haniya Mahdy',         emoji:'🌈', birth:'2 Agustus 2011',   hobi:'Melukis, Menari'       , motto:'Hidup berwarna seperti pelangi'},
   {no:21, name:'Nayomi Santya Eddy',          emoji:'👑', birth:'10 September 2011',hobi:'Kepemimpinan, Menyanyi', motto:'Pemimpin yang baik lahir dari hati'},
-  {no:22, name:'Noer Rosyidah El Hidayah',   emoji:'🌻', birth:'19 Oktober 2011', hobi:'Berkebun, Membaca', motto:'Tumbuh seperti bunga matahari'},
-  {no:23, name:'Nur Syifa Salsabila Wahyudi',emoji:'💐', birth:'27 November 2011',hobi:'Memasak, Fotografi', motto:'Indahkan setiap momen'},
-  {no:24, name:'Queensha Aurelia Abidin',    emoji:'👸', birth:'5 Desember 2011', hobi:'Fashion, Menyanyi', motto:'Cantik luar dan dalam'},
-  {no:25, name:'Raya Alisa',                  emoji:'🌟', birth:'13 Januari 2012', hobi:'Membaca, Traveling', motto:'Dunia adalah kelas terbesar'},
-  {no:26, name:'Reva Aulia Putri',            emoji:'🎀', birth:'21 Februari 2012',hobi:'Menari, Crafting', motto:'Kreasi tanpa henti'},
-  {no:27, name:'Rossa Mahyudin',              emoji:'🌹', birth:'1 Maret 2012',    hobi:'Menggambar, Menyanyi', motto:'Seni adalah jiwa'},
-  {no:28, name:'Safa Alzena Azalia',          emoji:'✨', birth:'9 April 2012',    hobi:'Fotografi, Membaca', motto:'Setiap momen berharga'},
-  {no:29, name:'Sitaloka Azzahra',            emoji:'🦄', birth:'17 Mei 2012',     hobi:'Melukis, Menari', motto:'Unik adalah kekuatan'},
-  {no:30, name:'St. Rahmah',                  emoji:'🕊️', birth:'25 Juni 2012',    hobi:'Mengaji, Memasak', motto:'Damai dalam hati'},
-  {no:31, name:'Syakira Firna Lamarta',       emoji:'🎵', birth:'3 Juli 2012',     hobi:'Musik, Nyanyi', motto:'Hidup adalah lagu'},
-  {no:32, name:'Wafiq Azizah Fakhri',         emoji:'💎', birth:'11 Agustus 2012', hobi:'Akuntansi, Membaca', motto:'Hemat pangkal kaya'},
+  {no:22, name:'Noer Rosyidah El Hidayah',    emoji:'🌻', birth:'19 Oktober 2011',  hobi:'Berkebun, Membaca'     , motto:'Tumbuh seperti bunga matahari'},
+  {no:23, name:'Nur Syifa Salsabila Wahyudi', emoji:'💐', birth:'27 November 2011', hobi:'Memasak, Fotografi'    , motto:'Indahkan setiap momen'},
+  {no:24, name:'Queensha Aurelia Abidin',     emoji:'👸', birth:'5 Desember 2011',  hobi:'Fashion, Menyanyi'     , motto:'Cantik luar dan dalam'},
+  {no:25, name:'Raya Alisa',                  emoji:'🌟', birth:'13 Januari 2012',  hobi:'Membaca, Traveling'    , motto:'Dunia adalah kelas terbesar'},
+  {no:26, name:'Reva Aulia Putri',            emoji:'🎀', birth:'21 Februari 2012', hobi:'Menari, Crafting'      , motto:'Kreasi tanpa henti'},
+  {no:27, name:'Rossa Mahyudin',              emoji:'🌹', birth:'1 Maret 2012',     hobi:'Menggambar, Menyanyi'  , motto:'Seni adalah jiwa'},
+  {no:28, name:'Safa Alzena Azalia',          emoji:'✨', birth:'9 April 2012',     hobi:'Fotografi, Membaca'    , motto:'Setiap momen berharga'},
+  {no:29, name:'Sitaloka Azzahra',            emoji:'🦄', birth:'17 Mei 2012',      hobi:'Melukis, Menari'       , motto:'Unik adalah kekuatan'},
+  {no:30, name:'St. Rahmah',                  emoji:'🕊️', birth:'25 Juni 2012',     hobi:'Mengaji, Memasak'      , motto:'Damai dalam hati'},
+  {no:31, name:'Syakira Firna Lamarta',       emoji:'🎵', birth:'3 Juli 2012',      hobi:'Musik, Nyanyi'         , motto:'Hidup adalah lagu'},
+  {no:32, name:'Wafiq Azizah Fakhri',         emoji:'💎', birth:'11 Agustus 2012',  hobi:'Akuntansi, Membaca'    , motto:'Hemat pangkal kaya'},
 ];
 
 // ── ORG MEMBERS (for org pill clicks) ──
@@ -949,7 +948,7 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal()
 // ── KAPSUL ──
 const seedMessages = [
   {name:'Nayomi', text:'Semoga kita semua sukses dan masih bersahabat sampai kapanpun! 💪', date:'1 Juni 2026'},
-  {name:'Hanif',  text:'Kenangan di kelas ini pasti akan selalu aku ingat. Kalian semua luar biasa! ❤️', date:'1 Juni 2026'},
+  {name:'Hanif',  text:'Kenangan di kelas ini pasti akan selalu aku ingat. Kalian semua luar biasa! ', date:'1 Juni 2026'},
 ];
 function renderCapsule() {
   let msgs = [];
