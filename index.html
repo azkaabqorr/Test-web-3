@@ -133,6 +133,7 @@
     .gallery-item:nth-child(2){background:linear-gradient(135deg,#110820,#2e0820)}
     .gallery-item:nth-child(3){background:linear-gradient(135deg,#081420,#052535)}
     .gallery-item:nth-child(4){background:linear-gradient(135deg,#061a12,#0a3020)}
+    .gallery-item:nth-child(5){background:linear-gradient(135deg,#201408,#351c05)}
     .gallery-upload-btn {
       border-radius: var(--radius); border: 2px dashed rgba(124,111,255,0.4);
       background: rgba(124,111,255,0.05);
@@ -459,47 +460,104 @@
     .link-name { font-weight: 800; font-size: .92rem; color: var(--text); }
     .link-desc { font-size: .76rem; color: var(--muted); margin-top: .2rem; }
 
-    /* SPOTIFY PLAYER */
-    .spotify-player {
-      position: fixed; bottom: 1rem; right: 1rem; z-index: 150;
-      background: rgba(10,10,20,0.95);
-      border: 1px solid rgba(29,185,84,0.4);
-      border-radius: 18px;
-      padding: .8rem 1rem;
-      display: flex; align-items: center; gap: .75rem;
-      box-shadow: 0 8px 40px rgba(0,0,0,0.8);
-      backdrop-filter: blur(20px);
-      min-width: 230px;
-      transition: all .3s;
+    /* SPOTIFY FLOATING PLAYER (UPDATED: SMALL DIAM LOGO IN BOTTOM-LEFT WITH POPUP MENU) */
+    .spotify-container {
+      position: fixed;
+      bottom: 1rem;
+      left: 1rem;
+      z-index: 150;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
     }
-    .spotify-player:hover { border-color: rgba(29,185,84,0.8); }
-    .spotify-disc {
-      width: 42px; height: 42px; border-radius: 50%;
-      background: linear-gradient(135deg, #1DB954, #0a3a1a);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.2rem; flex-shrink: 0;
-      animation: spin 4s linear infinite;
-      animation-play-state: paused;
-      border: 2px solid rgba(29,185,84,0.5);
+    .spotify-logo-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #1DB954;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+      transition: transform .2s;
+      border: 2px solid rgba(255,255,255,0.15);
+      outline: none;
     }
-    .spotify-disc.playing { animation-play-state: running; }
-    @keyframes spin { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
-    .spotify-info { flex: 1; overflow: hidden; }
-    .spotify-title { font-size: .78rem; font-weight: 800; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .spotify-artist { font-size: .67rem; color: rgba(255,255,255,.5); font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .spotify-controls { display: flex; align-items: center; gap: .4rem; }
+    .spotify-logo-btn:hover {
+      transform: scale(1.08);
+    }
+    .spotify-logo-btn svg {
+      width: 24px;
+      height: 24px;
+      fill: #fff;
+    }
+    .spotify-menu {
+      display: none;
+      background: rgba(10,10,20,0.96);
+      border: 1px solid rgba(29,185,84,0.5);
+      border-radius: 16px;
+      padding: .8rem;
+      margin-bottom: .6rem;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.95);
+      backdrop-filter: blur(15px);
+      flex-direction: column;
+      gap: .4rem;
+      min-width: 170px;
+    }
+    .spotify-menu.open {
+      display: flex;
+    }
+    .spotify-title {
+      font-size: .78rem;
+      font-weight: 800;
+      color: #fff;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-align: center;
+    }
+    .spotify-artist {
+      font-size: .67rem;
+      color: rgba(255,255,255,.5);
+      font-weight: 600;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-align: center;
+      margin-bottom: .3rem;
+    }
+    .spotify-controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem;
+    }
     .spotify-btn {
-      width: 30px; height: 30px; border-radius: 50%;
-      background: rgba(29,185,84,0.15); border: 1px solid rgba(29,185,84,0.3);
-      color: #1DB954; font-size: .85rem;
-      display: flex; align-items: center; justify-content: center;
-      cursor: pointer; transition: all .2s; padding: 0;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(29,185,84,0.15);
+      border: 1px solid rgba(29,185,84,0.3);
+      color: #1DB954;
+      font-size: .85rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all .2s;
+      padding: 0;
     }
-    .spotify-btn:hover { background: rgba(29,185,84,0.3); }
+    .spotify-btn:hover {
+      background: rgba(29,185,84,0.3);
+    }
     .spotify-progress {
-      position: absolute; bottom: 0; left: 0; height: 3px;
-      background: #1DB954; border-radius: 0 0 18px 18px;
-      width: 0%; transition: width 0.5s linear;
+      height: 2px;
+      background: #1DB954;
+      width: 0%;
+      transition: width 0.5s linear;
+      margin-top: .4rem;
+      border-radius: 99px;
     }
 
     /* FOOTER */
@@ -526,7 +584,7 @@
       .nav-links li:last-child a { border-bottom: none; }
       .nav-links a:hover { background: rgba(124,111,255,0.15); color: #c4b5fd !important; }
       .hamburger { display: flex; }
-      .spotify-player { left: 1rem; right: 1rem; min-width: unset; bottom: 1rem; }
+      .spotify-container { left: 1rem; bottom: 1rem; }
       .tree-multi-row { gap: 1rem; }
       .org-pill { font-size: .75rem; padding: .45rem 1rem; }
     }
@@ -592,14 +650,18 @@
   </div>
 
   <div class="gallery-item">
-    <img src="IMG-20260608-WA0077.jpg
-" style="width: 100%; height: auto; border-radius: 8px;">
+    <img src="IMG-20260608-WA0077.jpg" style="width: 100%; height: auto; border-radius: 8px;">
     <div class="gallery-label">Petugas Upacara</div>
   </div>
 
   <div class="gallery-item">
     <img src="IMG-20260603-WA0045.jpg" style="width: 100%; height: auto; border-radius: 8px;">
     <div class="gallery-label">Petugas PT2</div>
+  </div>
+
+  <div class="gallery-item">
+    <img src="IMG-20260609-WA0061.jpg" style="width: 100%; height: auto; border-radius: 8px;">
+    <div class="gallery-label">Barbeque </div>
   </div>
 
 </div>
@@ -780,19 +842,23 @@
   <p style="margin-top:.4rem;font-size:.76rem;opacity:.5">Kenangan indah yang tak akan pernah terlupakan 🌙✨</p>
 </footer>
 
-<!-- SPOTIFY FLOATING PLAYER -->
-<div class="spotify-player" id="spotifyPlayer">
-  <div class="spotify-disc" id="spotifyDisc">🎵</div>
-  <div class="spotify-info">
+<!-- SPOTIFY FLOATING PLAYER (UPDATED: SMALL DIAM LOGO IN BOTTOM-LEFT WITH POPUP MENU) -->
+<div class="spotify-container" id="spotifyContainer">
+  <div class="spotify-menu" id="spotifyMenu">
     <div class="spotify-title" id="spotifyTitle">Memuat lagu...</div>
     <div class="spotify-artist" id="spotifyArtist">Playlist VIII D</div>
+    <div class="spotify-controls">
+      <button class="spotify-btn" onclick="prevSong(event)" title="Sebelumnya">⏮</button>
+      <button class="spotify-btn" id="playBtn" onclick="togglePlay(event)" title="Play/Pause">▶</button>
+      <button class="spotify-btn" onclick="nextSong(event)" title="Berikutnya">⏭</button>
+    </div>
+    <div class="spotify-progress" id="spotifyProgress"></div>
   </div>
-  <div class="spotify-controls">
-    <button class="spotify-btn" onclick="prevSong()" title="Sebelumnya">⏮</button>
-    <button class="spotify-btn" id="playBtn" onclick="togglePlay()" title="Play/Pause">▶</button>
-    <button class="spotify-btn" onclick="nextSong()" title="Berikutnya">⏭</button>
-  </div>
-  <div class="spotify-progress" id="spotifyProgress"></div>
+  <button class="spotify-logo-btn" onclick="toggleSpotifyMenu(event)" title="Spotify Player">
+    <svg viewBox="0 0 24 24">
+      <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+    </svg>
+  </button>
 </div>
 
 <!-- PROFILE MODAL -->
@@ -1013,15 +1079,29 @@ let isPlaying = false;
 let progressInterval = null;
 let progress = 0;
 
+function toggleSpotifyMenu(e) {
+  e.stopPropagation();
+  const menu = document.getElementById('spotifyMenu');
+  menu.classList.toggle('open');
+}
+
+// Close menu if clicked outside
+window.addEventListener('click', function(e) {
+  const menu = document.getElementById('spotifyMenu');
+  if (menu && menu.classList.contains('open') && !document.getElementById('spotifyContainer').contains(e.target)) {
+    menu.classList.remove('open');
+  }
+});
+
 function updatePlayerUI() {
   const song = PLAYLIST[currentSong];
   document.getElementById('spotifyTitle').textContent = song.title;
   document.getElementById('spotifyArtist').textContent = song.artist;
-  document.getElementById('spotifyDisc').classList.toggle('playing', isPlaying);
   document.getElementById('playBtn').textContent = isPlaying ? '⏸' : '▶';
 }
 
-function togglePlay() {
+function togglePlay(e) {
+  if (e) e.stopPropagation();
   isPlaying = !isPlaying;
   updatePlayerUI();
   if (isPlaying) {
@@ -1044,14 +1124,16 @@ function startProgress() {
   }, 100);
 }
 
-function nextSong() {
+function nextSong(e) {
+  if (e) e.stopPropagation();
   progress = 0;
   currentSong = (currentSong + 1) % PLAYLIST.length;
   updatePlayerUI();
   if (isPlaying) startProgress();
 }
 
-function prevSong() {
+function prevSong(e) {
+  if (e) e.stopPropagation();
   progress = 0;
   currentSong = (currentSong - 1 + PLAYLIST.length) % PLAYLIST.length;
   updatePlayerUI();
