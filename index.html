@@ -1062,58 +1062,140 @@ function addCapsuleMessage() {
   alert('Pesanmu berhasil masuk ke kapsul waktu! 🚀✨');
 }
 
-// ── SPOTIFY PLAYER (REAL AUDIO FROM GITHUB)
+// ── SPOTIFY PLAYER (VERSI LENGKAP & FIX BUGS)
 const PLAYLIST = [
   { 
     title: 'Tujuh Belas', 
     artist: 'Tulus', 
     src: 'audio/TULUS - Tujuh Belas Official Music Video.mp3' 
+  },
+  { 
+    title: 'Laskar Pelangi', 
+    artist: 'Nidji', 
+    src: 'audio/NIDJI - Laskar Pelangi Official Music Video.mp3' 
+  },
+  { 
+    title: 'Monokrom', 
+    artist: 'Tulus', 
+    src: 'audio/TULUS - Monokrom Official Music Video.mp3' 
   }
+  { 
+    title: 'Death Bed', 
+    artist: 'powfu', 
+    src: 'audio/Powfu - death bed coffee for your head Official Video ft beabadoobee.mp3' 
+  },
 ];
 
 let currentSong = 0;
 let isPlaying = false;
 let audio = new Audio();
 
+// Update Tampilan Informasi Lagu
 function updatePlayerUI() {
+  if (PLAYLIST.length === 0) return;
   const song = PLAYLIST[currentSong];
   document.getElementById('spotifyTitle').innerText = song.title;
   document.getElementById('spotifyArtist').innerText = song.artist;
+  
+  // Reset bar progres saat lagu berubah
+  const progressBar = document.getElementById('spotifyProgress');
+  if (progressBar) progressBar.style.width = '0%';
 }
 
-function togglePlay() {
+// Fungsi Play dan Pause (Sekaligus Ubah Logo/Teks Tombol)
+function togglePlay(e) {
+  if (e) e.stopPropagation(); // Biar pas dipencet, menu gak langsung nutup
   if (PLAYLIST.length === 0) return;
   
-  // Set sumber audio jika belum ada atau berubah
   const currentSrc = PLAYLIST[currentSong].src;
   if (!audio.src.includes(currentSrc)) {
     audio.src = currentSrc;
   }
 
+  const playBtn = document.getElementById('playBtn'); // Ganti dengan ID tombol play kamu
+
   if (isPlaying) {
     audio.pause();
     isPlaying = false;
+    if (playBtn) playBtn.innerText = 'PLAY'; // Ubah teks/ikon jadi PLAY saat pause
   } else {
     audio.play().catch(err => console.log("Gagal muter audio:", err));
     isPlaying = true;
+    if (playBtn) playBtn.innerText = 'PAUSE'; // Ubah teks/ikon jadi PAUSE saat main
   }
 }
 
-// Fungsi tambahan buat menu Spotify kamu
+// Fungsi Lagu Berikutnya (Next)
+function nextSong(e) {
+  if (e) e.stopPropagation(); // Biar menu gak ikutan nutup
+  currentSong = (currentSong + 1) % PLAYLIST.length;
+  isPlaying = false;
+  audio.pause();
+  audio.src = PLAYLIST[currentSong].src;
+  updatePlayerUI();
+  togglePlay();
+}
+
+// Fungsi Lagu Sebelumnya (Prev)
+function prevSong(e) {
+  if (e) e.stopPropagation(); // Biar menu gak ikutan nutup
+  currentSong = (currentSong - 1 + PLAYLIST.length) % PLAYLIST.length;
+  isPlaying = false;
+  audio.pause();
+  audio.src = PLAYLIST[currentSong].src;
+  updatePlayerUI();
+  togglePlay();
+}
+
+// Update Durasi Berjalan & Bar Progres Otomatis
+audio.addEventListener('timeupdate', function() {
+  if (!audio.duration) return;
+  
+  // Hitung persentase durasi untuk dijalankan ke Bar Progres
+  const progressPercent = (audio.currentTime / audio.duration) * 100;
+  const progressBar = document.getElementById('spotifyProgress'); // ID element bar progresmu
+  if (progressBar) {
+    progressBar.style.width = `${progressPercent}%`;
+  }
+  
+  // Mengubah angka durasi menit:detik (Opsional jika ada element teks durasi)
+  const currentTxt = document.getElementById('currentTimeText');
+  const durationTxt = document.getElementById('durationTimeText');
+  
+  if (currentTxt) currentTxt.innerText = formatTime(audio.currentTime);
+  if (durationTxt) durationTxt.innerText = formatTime(audio.duration);
+});
+
+// Otomatis putar lagu berikutnya kalau lagu yang sekarang sudah habis
+audio.addEventListener('ended', function() {
+  nextSong();
+});
+
+// Helper format angka waktu (00:00)
+function formatTime(secs) {
+  let min = Math.floor(secs / 60);
+  let sec = Math.floor(secs % 60);
+  if (sec < 10) sec = "0" + sec;
+  return min + ":" + sec;
+}
+
+// Fungsi Buka-Tutup Menu Utama Spotify
 function toggleSpotifyMenu(e) {
-  e.stopPropagation();
-  const menu = document.getElementById('spotifyMenu'); // sesuaikan ID menu kamu
+  if (e) e.stopPropagation();
+  const menu = document.getElementById('spotifyMenu'); 
   if (menu) menu.classList.toggle('open');
 }
 
-window.addEventListener('click', function() {
+// Menutup menu HANYA kalau nge-klik di luar area player luar
+window.addEventListener('click', function(e) {
   const menu = document.getElementById('spotifyMenu');
-  if (menu && menu.classList.contains('open')) {
+  // Cek jika yang diklik bukan bagian dari dalam menu player
+  if (menu && menu.classList.contains('open') && !menu.contains(e.target)) {
     menu.classList.remove('open');
   }
 });
 
-// Inisialisasi tampilan awal
+// Jalankan fungsi awal biar teks lagunya muncul
 updatePlayerUI();
 </script>
 </body>
