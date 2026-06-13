@@ -1062,81 +1062,58 @@ function addCapsuleMessage() {
   alert('Pesanmu berhasil masuk ke kapsul waktu! 🚀✨');
 }
 
-// ── SPOTIFY PLAYER (simulated, background audio) ──
+// ── SPOTIFY PLAYER (REAL AUDIO FROM GITHUB)
 const PLAYLIST = [
-  { title: 'Tujuh Belas', artist: 'Tulus', src: 'audio/VID_20260610_065427_207 (1).mp3' },
-  { title: 'Laskar Pelangi', artist: 'Nidji', src: 'audio/laskar-pelangi.mp3' },
-  { title: 'Monokrom', artist: 'Tulus', src: 'audio/monokrom.mp3' },
-  { title: 'Death Bed', artist: 'Powfu ft. beabadoobee', src: 'audio/death-bed.mp3' }
+  { 
+    title: 'VID_20260610_065427_207 (1)', 
+    artist: 'Class Audio', 
+    src: 'audio/VID_20260610_065427_207 (1).mp3' 
+  }
 ];
-
 
 let currentSong = 0;
 let isPlaying = false;
-let progressInterval = null;
-let progress = 0;
+let audio = new Audio();
 
-function toggleSpotifyMenu(e) {
-  e.stopPropagation();
-  const menu = document.getElementById('spotifyMenu');
-  menu.classList.toggle('open');
+function updatePlayerUI() {
+  const song = PLAYLIST[currentSong];
+  document.getElementById('spotifyTitle').innerText = song.title;
+  document.getElementById('spotifyArtist').innerText = song.artist;
 }
 
-// Close menu if clicked outside
-window.addEventListener('click', function(e) {
+function togglePlay() {
+  if (PLAYLIST.length === 0) return;
+  
+  // Set sumber audio jika belum ada atau berubah
+  const currentSrc = PLAYLIST[currentSong].src;
+  if (!audio.src.includes(currentSrc)) {
+    audio.src = currentSrc;
+  }
+
+  if (isPlaying) {
+    audio.pause();
+    isPlaying = false;
+  } else {
+    audio.play().catch(err => console.log("Gagal muter audio:", err));
+    isPlaying = true;
+  }
+}
+
+// Fungsi tambahan buat menu Spotify kamu
+function toggleSpotifyMenu(e) {
+  e.stopPropagation();
+  const menu = document.getElementById('spotifyMenu'); // sesuaikan ID menu kamu
+  if (menu) menu.classList.toggle('open');
+}
+
+window.addEventListener('click', function() {
   const menu = document.getElementById('spotifyMenu');
-  if (menu && menu.classList.contains('open') && !document.getElementById('spotifyContainer').contains(e.target)) {
+  if (menu && menu.classList.contains('open')) {
     menu.classList.remove('open');
   }
 });
 
-function updatePlayerUI() {
-  const song = PLAYLIST[currentSong];
-  document.getElementById('spotifyTitle').textContent = song.title;
-  document.getElementById('spotifyArtist').textContent = song.artist;
-  document.getElementById('playBtn').textContent = isPlaying ? '⏸' : '▶';
-}
-
-function togglePlay(e) {
-  if (e) e.stopPropagation();
-  isPlaying = !isPlaying;
-  updatePlayerUI();
-  if (isPlaying) {
-    startProgress();
-  } else {
-    clearInterval(progressInterval);
-  }
-}
-
-function startProgress() {
-  clearInterval(progressInterval);
-  progressInterval = setInterval(() => {
-    progress += 100/200; // 200 ticks = ~20s per song
-    if (progress >= 100) {
-      progress = 0;
-      nextSong();
-      return;
-    }
-    document.getElementById('spotifyProgress').style.width = progress + '%';
-  }, 100);
-}
-
-function nextSong(e) {
-  if (e) e.stopPropagation();
-  progress = 0;
-  currentSong = (currentSong + 1) % PLAYLIST.length;
-  updatePlayerUI();
-  if (isPlaying) startProgress();
-}
-
-function prevSong(e) {
-  if (e) e.stopPropagation();
-  progress = 0;
-  currentSong = (currentSong - 1 + PLAYLIST.length) % PLAYLIST.length;
-  updatePlayerUI();
-  if (isPlaying) startProgress();
-}
-
+// Inisialisasi tampilan awal
 updatePlayerUI();
 </script>
 </body>
