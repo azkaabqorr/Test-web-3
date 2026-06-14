@@ -428,6 +428,7 @@
     .capsule-msg .msg-author { font-size: .72rem; color: var(--accent); font-weight: 800; margin-bottom: .3rem; }
     .capsule-msg .msg-text { color: rgba(255,255,255,.8); font-size: .85rem; line-height: 1.55; }
     .capsule-msg .msg-date { font-size: .68rem; color: rgba(255,255,255,.3); margin-top: .4rem; }
+    .capsule-msg { background: rgba(255,255,255,.06); border-radius: 14px; padding: 1rem 1.2rem; border-left: 3px solid var(--accent); }
     .capsule-form { display: flex; flex-direction: column; gap: .6rem; position: relative; z-index: 1; }
     .capsule-form input {
       padding: .7rem 1rem; border-radius: 10px;
@@ -592,7 +593,6 @@
 </head>
 <body>
 
-<!-- NAVBAR -->
 <nav>
   <div class="nav-logo">VIII D 🌙</div>
   <ul class="nav-links" id="navLinks">
@@ -607,7 +607,6 @@
   </div>
 </nav>
 
-<!-- HERO -->
 <div class="hero">
   <div class="star-field" id="heroStars"></div>
   <div class="hero-glow"></div>
@@ -624,14 +623,12 @@
     <a href="https://instagram.com/kelaskita" target="_blank" title="Instagram">
       <svg width="17" height="17" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
     </a>
-    <!-- Spotify icon instead of TikTok -->
     <a href="https://open.spotify.com" target="_blank" title="Spotify Playlist Kelas">
       <svg width="17" height="17" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
     </a>
   </div>
 </div>
 
-<!-- GALERI -->
 <div class="section-divider"></div>
 <section id="galeri">
   <span class="section-tag tag-pink">📸 Galeri</span>
@@ -639,38 +636,34 @@
   <p class="section-sub">Koleksi foto kenangan kelas VIII D yang tak terlupakan.</p>
   <div class="gallery-grid">
   
-  <div class="gallery-item">
-    <img src="IMG-20260608-WA0064.jpg" style="width: 100%; height: auto; border-radius: 8px;">
-    <div class="gallery-label">Bukber Kelas #1</div>
-  </div>
+    <div class="gallery-item">
+      <img src="IMG-20260608-WA0064.jpg" style="width: 100%; height: auto; border-radius: 8px;">
+      <div class="gallery-label">Bukber Kelas #1</div>
+    </div>
 
-  <div class="gallery-item">
-    <img src="IMG-20260609-WA0049.jpg" style="width: 100%; height: auto; border-radius: 8px;">
-    <div class="gallery-label">Bukber Kelas #2</div>
-  </div>
+    <div class="gallery-item">
+      <img src="IMG-20260609-WA0049.jpg" style="width: 100%; height: auto; border-radius: 8px;">
+      <div class="gallery-label">Bukber Kelas #2</div>
+    </div>
 
-  <div class="gallery-item">
-    <img src="IMG-20260608-WA0077.jpg" style="width: 100%; height: auto; border-radius: 8px;">
-    <div class="gallery-label">Petugas Upacara</div>
-  </div>
+    <div class="gallery-item">
+      <img src="IMG-20260608-WA0077.jpg" style="width: 100%; height: auto; border-radius: 8px;">
+      <div class="gallery-label">Petugas Upacara</div>
+    </div>
 
-  <div class="gallery-item">
-    <img src="IMG-20260603-WA0045.jpg" style="width: 100%; height: auto; border-radius: 8px;">
-    <div class="gallery-label">Petugas PT2</div>
-  </div>
+    <div class="gallery-item">
+      <img src="IMG-20260603-WA0045.jpg" style="width: 100%; height: auto; border-radius: 8px;">
+      <div class="gallery-label">Petugas PT2</div>
+    </div>
 
-  <div class="gallery-item">
-    <img src="IMG-20260609-WA0061.jpg" style="width: 100%; height: auto; border-radius: 8px;">
-    <div class="gallery-label">Barbeque </div>
-  </div>
+    <div class="gallery-item">
+      <img src="IMG-20260609-WA0061.jpg" style="width: 100%; height: auto; border-radius: 8px;">
+      <div class="gallery-label">Barbeque </div>
+    </div>
 
-</div>
-
-   </div>
   </div>
 </section>
 
-<!-- ORGANISASI - TREE STYLE like screenshot -->
 <div class="section-divider"></div>
 <section id="organisasi">
   <span class="section-tag tag-yellow">👑 Struktur Kelas</span>
@@ -679,28 +672,23 @@
 
   <div class="org-tree" id="orgTree">
 
-    <!-- WALI KELAS -->
     <div class="tree-row org-reveal">
       <div class="org-role-label">Wali Kelas</div>
       <div class="org-pill wali-kelas" onclick="openModal('wali')">👩‍🏫 Ibu Anni Hanifa Soesilo S.Pd</div>
     </div>
     <div class="v-line org-reveal"></div>
 
-    <!-- KETUA + WAKIL row with horizontal connector -->
     <div class="org-reveal" style="display:flex;flex-direction:column;align-items:center;width:100%">
       <div style="display:flex;align-items:flex-start;justify-content:center;gap:0;width:100%;">
-        <!-- Left branch: Ketua -->
         <div style="display:flex;flex-direction:column;align-items:center;flex:1;">
           <div class="dot-circle"></div>
           <div class="v-line-short"></div>
           <div class="org-role-label">Ketua Kelas</div>
           <div class="org-pill ketua-kelas" onclick="openModal('ketua')">👑 Nayomi</div>
         </div>
-        <!-- Horizontal line between -->
         <div style="flex:1;display:flex;align-items:flex-start;padding-top:4px;">
           <div style="flex:1;height:2px;background:linear-gradient(90deg,#7C6FFF,#FF6B9D);margin-top:0;"></div>
         </div>
-        <!-- Right branch: Wakil -->
         <div style="display:flex;flex-direction:column;align-items:center;flex:1;">
           <div class="dot-circle"></div>
           <div class="v-line-short"></div>
@@ -711,7 +699,6 @@
     </div>
     <div class="v-line org-reveal"></div>
 
-    <!-- SEKRETARIS + BENDAHARA -->
     <div class="org-reveal" style="display:flex;flex-direction:column;align-items:center;width:100%">
       <div style="display:flex;align-items:flex-start;justify-content:center;gap:0;width:100%;">
         <div style="display:flex;flex-direction:column;align-items:center;flex:1;">
@@ -738,7 +725,6 @@
     </div>
     <div class="v-line org-reveal"></div>
 
-    <!-- KEAMANAN + KEBERSIHAN -->
     <div class="org-reveal" style="display:flex;flex-direction:column;align-items:center;width:100%">
       <div style="display:flex;align-items:flex-start;justify-content:center;gap:0;width:100%;">
         <div style="display:flex;flex-direction:column;align-items:center;flex:1;">
@@ -768,7 +754,6 @@
   </div>
 </section>
 
-<!-- DAFTAR SISWA -->
 <div class="section-divider"></div>
 <section id="siswa">
   <span class="section-tag tag-purple">🎒 Siswa</span>
@@ -780,7 +765,6 @@
   <div class="student-grid" id="studentGrid"></div>
 </section>
 
-<!-- KAPSUL WAKTU -->
 <div class="section-divider"></div>
 <section id="kapsul">
   <span class="section-tag tag-green">💌 Kapsul Waktu</span>
@@ -800,7 +784,6 @@
   </div>
 </section>
 
-<!-- LINKS -->
 <div class="section-divider"></div>
 <section id="links">
   <span class="section-tag tag-purple">🔗 Links</span>
@@ -835,13 +818,11 @@
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <p>Made with <span>💵</span> oleh Azka Abqary · 2025/2026</p>
   <p style="margin-top:.4rem;font-size:.76rem;opacity:.5">Kenangan indah yang tak akan pernah terlupakan 🌙✨</p>
 </footer>
 
-<!-- SPOTIFY FLOATING PLAYER (UPDATED: SMALL DIAM LOGO IN BOTTOM-LEFT WITH POPUP MENU) -->
 <div class="spotify-container" id="spotifyContainer">
   <div class="spotify-menu" id="spotifyMenu">
     <div class="spotify-title" id="spotifyTitle">Memuat lagu...</div>
@@ -860,7 +841,6 @@
   </button>
 </div>
 
-<!-- PROFILE MODAL -->
 <div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
   <div class="modal-card">
     <div class="modal-close" onclick="closeModal()">✕</div>
@@ -943,7 +923,7 @@ const STUDENTS = [
   {no:14, name:'M. Azka Abqary',              emoji:'🎮', birth:'14 Februari 2011',hobi:'Coding, Gaming', motto:'Technology changes the world'},
   {no:15, name:'M. Fauzan Madani',            emoji:'💪', birth:'23 Maret 2011',   hobi:'Gym, Olahraga, boxing', motto:'No pain no gain'},
   {no:16, name:'M. Hafi',                     emoji:'🌙', birth:'30 April 2011',   hobi:'Mengaji, Membaca', motto:'Malam penuh berkah'},
-  {no:17, name:'qeqep',             emoji:'🦅', birth:'8 Mei 2011',      hobi:'yaping', motto:'yaping tiada habis'},
+  {no:17, name:'qeqep',                       emoji:'🦅', birth:'8 Mei 2011',      hobi:'yaping', motto:'yaping tiada habis'},
   {no:18, name:'Muhammad Wildan',             emoji:'🎸', birth:'17 Juni 2011',    hobi:'Musik, Gitar', motto:'Musik menyatukan hati'},
   {no:19, name:'M. Zaidan Iriady',            emoji:'⚡', birth:'25 Juli 2011',    hobi:'Renang, Lari', motto:'Cepat seperti kilat'},
   {no:20, name:'Nasywa Haniya Mahdy',         emoji:'🌈', birth:'2 Agustus 2011',  hobi:'Melukis, Menari', motto:'Hidup berwarna seperti pelangi'},
@@ -961,7 +941,7 @@ const STUDENTS = [
   {no:32, name:'Wafiq Azizah Fakhri',         emoji:'💎', birth:'11 Agustus 2012', hobi:'Akuntansi, Membaca', motto:'Hemat pangkal kaya'},
 ];
 
-// ── ORG MEMBERS (for org pill clicks) ──
+// ── ORG MEMBERS ──
 const ORG_DATA = {
   wali:    {name:'Ibu Anni Hanifa Soesilo S.Pd', emoji:'👩‍🏫', no:'Wali Kelas', birth:'—', hobi:'Mengajar, Mendidik', motto:'Guru adalah pelita bangsa'},
   ketua:   {name:'Nayomi', emoji:'👑', no:'Ketua Kelas', birth:'—', hobi:'Kepemimpinan, Organisasi', motto:'Bersama kita bisa'},
@@ -1062,7 +1042,7 @@ function addCapsuleMessage() {
   alert('Pesanmu berhasil masuk ke kapsul waktu! 🚀✨');
 }
 
-// ── SPOTIFY PLAYER (VERSI LENGKAP & FIX BUGS)
+// ── SPOTIFY PLAYER ──
 const PLAYLIST = [
   { 
     title: 'Tujuh Belas', 
@@ -1090,21 +1070,18 @@ let currentSong = 0;
 let isPlaying = false;
 let audio = new Audio();
 
-// Update Tampilan Informasi Lagu
 function updatePlayerUI() {
   if (PLAYLIST.length === 0) return;
   const song = PLAYLIST[currentSong];
   document.getElementById('spotifyTitle').innerText = song.title;
   document.getElementById('spotifyArtist').innerText = song.artist;
   
-  // Reset bar progres saat lagu berubah
   const progressBar = document.getElementById('spotifyProgress');
   if (progressBar) progressBar.style.width = '0%';
 }
 
-// Fungsi Play dan Pause (Sekaligus Ubah Logo/Teks Tombol)
 function togglePlay(e) {
-  if (e) e.stopPropagation(); // Biar pas dipencet, menu gak langsung nutup
+  if (e) e.stopPropagation();
   if (PLAYLIST.length === 0) return;
   
   const currentSrc = PLAYLIST[currentSong].src;
@@ -1112,22 +1089,21 @@ function togglePlay(e) {
     audio.src = currentSrc;
   }
 
-  const playBtn = document.getElementById('playBtn'); // Ganti dengan ID tombol play kamu
+  const playBtn = document.getElementById('playBtn');
 
   if (isPlaying) {
     audio.pause();
     isPlaying = false;
-    if (playBtn) playBtn.innerText = 'PLAY'; // Ubah teks/ikon jadi PLAY saat pause
+    if (playBtn) playBtn.innerText = 'PLAY';
   } else {
     audio.play().catch(err => console.log("Gagal muter audio:", err));
     isPlaying = true;
-    if (playBtn) playBtn.innerText = 'PAUSE'; // Ubah teks/ikon jadi PAUSE saat main
+    if (playBtn) playBtn.innerText = 'PAUSE';
   }
 }
 
-// Fungsi Lagu Berikutnya (Next)
 function nextSong(e) {
-  if (e) e.stopPropagation(); // Biar menu gak ikutan nutup
+  if (e) e.stopPropagation();
   currentSong = (currentSong + 1) % PLAYLIST.length;
   isPlaying = false;
   audio.pause();
@@ -1136,9 +1112,8 @@ function nextSong(e) {
   togglePlay();
 }
 
-// Fungsi Lagu Sebelumnya (Prev)
 function prevSong(e) {
-  if (e) e.stopPropagation(); // Biar menu gak ikutan nutup
+  if (e) e.stopPropagation();
   currentSong = (currentSong - 1 + PLAYLIST.length) % PLAYLIST.length;
   isPlaying = false;
   audio.pause();
@@ -1147,18 +1122,15 @@ function prevSong(e) {
   togglePlay();
 }
 
-// Update Durasi Berjalan & Bar Progres Otomatis
 audio.addEventListener('timeupdate', function() {
   if (!audio.duration) return;
   
-  // Hitung persentase durasi untuk dijalankan ke Bar Progres
   const progressPercent = (audio.currentTime / audio.duration) * 100;
-  const progressBar = document.getElementById('spotifyProgress'); // ID element bar progresmu
+  const progressBar = document.getElementById('spotifyProgress');
   if (progressBar) {
     progressBar.style.width = `${progressPercent}%`;
   }
   
-  // Mengubah angka durasi menit:detik (Opsional jika ada element teks durasi)
   const currentTxt = document.getElementById('currentTimeText');
   const durationTxt = document.getElementById('durationTimeText');
   
@@ -1166,12 +1138,10 @@ audio.addEventListener('timeupdate', function() {
   if (durationTxt) durationTxt.innerText = formatTime(audio.duration);
 });
 
-// Otomatis putar lagu berikutnya kalau lagu yang sekarang sudah habis
 audio.addEventListener('ended', function() {
   nextSong();
 });
 
-// Helper format angka waktu (00:00)
 function formatTime(secs) {
   let min = Math.floor(secs / 60);
   let sec = Math.floor(secs % 60);
@@ -1179,23 +1149,19 @@ function formatTime(secs) {
   return min + ":" + sec;
 }
 
-// Fungsi Buka-Tutup Menu Utama Spotify
 function toggleSpotifyMenu(e) {
   if (e) e.stopPropagation();
   const menu = document.getElementById('spotifyMenu'); 
   if (menu) menu.classList.toggle('open');
 }
 
-// Menutup menu HANYA kalau nge-klik di luar area player luar
 window.addEventListener('click', function(e) {
   const menu = document.getElementById('spotifyMenu');
-  // Cek jika yang diklik bukan bagian dari dalam menu player
   if (menu && menu.classList.contains('open') && !menu.contains(e.target)) {
     menu.classList.remove('open');
   }
 });
 
-// Jalankan fungsi awal biar teks lagunya muncul
 updatePlayerUI();
 </script>
 </body>
